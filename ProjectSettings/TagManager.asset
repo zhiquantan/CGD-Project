@@ -4,11 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - obstacle
-  - dood
-  - ramp
   - dropdown
-  - coin
   - GameOverUI
   - ScoreView
   - ScoreText
@@ -16,16 +12,11 @@ TagManager:
   - Canvas
   - GoLeaderboard
   - GoGameMenu
-  - goldBox
   - PlayList
   - roomMenu
-  - CharacterUI
-  - Bullet
-  - BulletNumber
-  - bulletObject
-  - Life
-  - LifeObject
-  - InvincibleObject
+  - Animal
+  - Material
+  - Terrain
   layers:
   - Default
   - TransparentFX

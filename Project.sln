@@ -11,9 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking", "Ph
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonRealtime", "PhotonRealtime.csproj", "{eb800d78-96ae-75f5-d9ac-f5074ea92bbc}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StylizedWaterForURP", "StylizedWaterForURP.csproj", "{df1f94df-6f72-2c94-b4fb-7654680b0a09}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Editor", "PhotonUnityNetworking.Editor.csproj", "{1bb4740b-d86c-cc5f-bba1-556ddd6ddff7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Utilities.PhotonPlayer.Editor", "PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj", "{412145dd-5c92-50b8-029c-c286fddd2013}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StylizedWaterForURPEditor", "StylizedWaterForURPEditor.csproj", "{04a1f5f8-2b38-cd20-8bf8-b7a110e7138e}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Utilities.Culling.Editor", "PhotonUnityNetworking.Utilities.Culling.Editor.csproj", "{d287a613-486b-baf7-7091-a108cddd03f8}"
 EndProject
@@ -32,10 +36,14 @@ Global
 		{2fba6941-06e5-5458-aba3-95e2467f8c06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{eb800d78-96ae-75f5-d9ac-f5074ea92bbc}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{eb800d78-96ae-75f5-d9ac-f5074ea92bbc}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{df1f94df-6f72-2c94-b4fb-7654680b0a09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{df1f94df-6f72-2c94-b4fb-7654680b0a09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1bb4740b-d86c-cc5f-bba1-556ddd6ddff7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1bb4740b-d86c-cc5f-bba1-556ddd6ddff7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{412145dd-5c92-50b8-029c-c286fddd2013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{412145dd-5c92-50b8-029c-c286fddd2013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04a1f5f8-2b38-cd20-8bf8-b7a110e7138e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04a1f5f8-2b38-cd20-8bf8-b7a110e7138e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{d287a613-486b-baf7-7091-a108cddd03f8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{d287a613-486b-baf7-7091-a108cddd03f8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
