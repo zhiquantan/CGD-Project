@@ -13,7 +13,7 @@ public class RayCaster : MonoBehaviour
     {
         var ray = new Ray(transform.position, this.transform.TransformDirection(Vector3.forward));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit,8))
+        if (Physics.Raycast(ray, out hit,100))
         {
             //Debug.DrawRay(transform.position, this.transform.TransformDirection(Vector3.forward)*hit.distance,Color.red);
              Hit = hit.transform.gameObject;
