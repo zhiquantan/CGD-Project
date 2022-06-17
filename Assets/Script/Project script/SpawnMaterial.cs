@@ -21,19 +21,20 @@ IEnumerator EnemyDrop()
 {
     while(count1+count2<10)
     {
-        xPos=Random.Range(-51,423);
-        zPos=Random.Range(-62,-22);
+        xPos=Random.Range(-5,420);
+        zPos=Random.Range(-50,230);
         no=Random.Range(0,3);
         Debug.Log(no);
-        if(no==1)
+
+        if(no==1&&count1<=5)
         {
-            Instantiate(Material1,new Vector3(xPos,92,zPos),Quaternion.identity);
+            Instantiate(Material1,new Vector3(xPos,70,zPos),Quaternion.identity);
             yield return new WaitForSeconds(5);
             count1++;
         }
-        else if(no==2)
+        else if(no==2&&count2<=5)
         {
-            Instantiate(Material2,new Vector3(xPos,83,zPos),Quaternion.identity);
+            Instantiate(Material2,new Vector3(xPos,70,zPos),Quaternion.identity);
             yield return new WaitForSeconds(5);
             count2++;
         }
