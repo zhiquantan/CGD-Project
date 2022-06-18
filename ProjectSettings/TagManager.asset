@@ -18,6 +18,8 @@ TagManager:
   - Material
   - Terrain
   - CollidePoint
+  - Stone
+  - Wood
   layers:
   - Default
   - TransparentFX

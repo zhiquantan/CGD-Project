@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RayCaster : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class RayCaster : MonoBehaviour
     public GameObject AnimalIcon;
     public GameObject NothingIcon;
     public GameObject MaterialIcon;
+    public int currentWood=0;
+    public int currentStone=0;
+    public Text currentWoodUI;
+    public Text currentStoneUI;
+    public GameObject WarningUI;
     
     void FixedUpdate()
     {
@@ -18,15 +24,43 @@ public class RayCaster : MonoBehaviour
             //Debug.DrawRay(transform.position, this.transform.TransformDirection(Vector3.forward)*hit.distance,Color.red);
              Hit = hit.transform.gameObject;
 
-            if (Hit.tag == "Material")
+            if (Hit.tag == "Stone")
             {
 
                 MaterialIcon.GetComponent<SpriteRenderer>().enabled = true;
                 NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0)&&currentStone<5)
                 {
-                   Debug.Log("M");
+                   currentStone++;
+                   currentStoneUI.text=currentStone.ToString();
+                   Destroy(Hit.gameObject);
+                   SpawnMaterial.count1--;
+                }
+
+                else if(Input.GetMouseButtonDown(0)&&currentStone>=5)
+                {
+                    StartCoroutine(WarningText());
+                }
+            }
+
+            else if (Hit.tag == "Wood")
+            {
+
+                MaterialIcon.GetComponent<SpriteRenderer>().enabled = true;
+                NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
+
+                if (Input.GetMouseButtonDown(0)&&currentWood<5)
+                {
+                   currentWood++;
+                   currentWoodUI.text=currentWood.ToString();
+                    Destroy(Hit.gameObject);
+                    SpawnMaterial.count2--;
+                }
+
+                 else if(Input.GetMouseButtonDown(0)&&currentWood>=5)
+                {
+                     StartCoroutine(WarningText());
                 }
             }
 
@@ -40,6 +74,8 @@ public class RayCaster : MonoBehaviour
                 {
                     Debug.Log("A");
                 }
+
+                
             }
 
             else
@@ -49,5 +85,11 @@ public class RayCaster : MonoBehaviour
                 NothingIcon.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
+    }
+    IEnumerator WarningText()
+    {
+        WarningUI.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        WarningUI.SetActive(false);
     }
 }

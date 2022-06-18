@@ -8,8 +8,8 @@ public class SpawnMaterial : MonoBehaviour
     public GameObject Material2;
     public int xPos;
     public int zPos;
-    public int count1;
-    public int count2;
+    public static int count1;
+    public static int count2;
     public int no;
     
     void Start()
