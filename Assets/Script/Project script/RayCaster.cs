@@ -14,12 +14,21 @@ public class RayCaster : MonoBehaviour
     public Text currentWoodUI;
     public Text currentStoneUI;
     public GameObject WarningUI;
-    
+    public GameObject Bridge;
+    void Start()
+    {
+        Bridge= GameObject.FindGameObjectsWithTag("Bridge")[0];
+    }
+    void Update()
+    {
+        currentWoodUI.text=currentWood.ToString();
+        currentStoneUI.text=currentStone.ToString();
+    }
     void FixedUpdate()
     {
         var ray = new Ray(transform.position, this.transform.TransformDirection(Vector3.forward));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit,100))
+        if (Physics.Raycast(ray, out hit,60))
         {
             //Debug.DrawRay(transform.position, this.transform.TransformDirection(Vector3.forward)*hit.distance,Color.red);
              Hit = hit.transform.gameObject;
@@ -77,6 +86,24 @@ public class RayCaster : MonoBehaviour
 
                 
             }
+
+            else if (Hit.tag == "CollidePoint")
+            {
+
+                MaterialIcon.GetComponent<SpriteRenderer>().enabled = true;
+                NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
+
+            if (Input.GetMouseButtonDown(0))
+                {
+                    Bridge.GetComponent<Bridge>().currentWood=Bridge.GetComponent<Bridge>().currentWood+currentWood;
+                    Bridge.GetComponent<Bridge>().currentStone=Bridge.GetComponent<Bridge>().currentStone+currentStone;
+                    currentWood=0;
+                    currentStone=0;
+                    Bridge.GetComponent<Bridge>().Phase();
+                }
+                
+            }
+
 
             else
             {

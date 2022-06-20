@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6223692422651494161}
   - component: {fileID: 5574896930430983877}
   - component: {fileID: 1207630926081225406}
+  - component: {fileID: 5844941265927823390}
   m_Layer: 0
   m_Name: buildingWood
   m_TagString: Wood
@@ -116,3 +117,15 @@ NavMeshAgent:
   m_BaseOffset: 399.53375
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5844941265927823390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574896930430983876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7bfa502695097418b480f21c843076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

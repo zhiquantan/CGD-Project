@@ -23,7 +23,7 @@ IEnumerator EnemyDrop()
         xPos=Random.Range(-51,423);
         zPos=Random.Range(-62,-22);
         no=Random.Range(0,3);
-        Debug.Log(no);
+       
         if(no==1)
         {
             Instantiate(Animal1,new Vector3(xPos,92,zPos),Quaternion.identity);

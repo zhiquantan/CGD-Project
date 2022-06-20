@@ -52,8 +52,11 @@
      <Compile Include="Assets\Script\PlayerManager.cs" />
      <Compile Include="Assets\Script\PlayerMovement.cs" />
      <Compile Include="Assets\Script\Project script\AnimalAIMovement.cs" />
+     <Compile Include="Assets\Script\Project script\Bridge\Bridge.cs" />
      <Compile Include="Assets\Script\Project script\CharacterAnimation.cs" />
      <Compile Include="Assets\Script\Project script\CollideBridge.cs" />
+     <Compile Include="Assets\Script\Project script\Game.cs" />
+     <Compile Include="Assets\Script\Project script\Material\MaterialDestroy.cs" />
      <Compile Include="Assets\Script\Project script\RayCaster.cs" />
      <Compile Include="Assets\Script\Project script\SC_FPSController.cs" />
      <Compile Include="Assets\Script\Project script\SpawnAnimal.cs" />
