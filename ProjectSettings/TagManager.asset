@@ -21,6 +21,8 @@ TagManager:
   - Stone
   - Wood
   - Bridge
+  - GameOverUIFinder
+  - AnimalSpawnObject
   layers:
   - Default
   - TransparentFX

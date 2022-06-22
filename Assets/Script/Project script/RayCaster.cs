@@ -17,7 +17,8 @@ public class RayCaster : MonoBehaviour
     public GameObject Bridge;
     void Start()
     {
-        Bridge= GameObject.FindGameObjectsWithTag("Bridge")[0];
+        StartCoroutine(FindBridge());
+        
     }
     void Update()
     {
@@ -120,4 +121,13 @@ public class RayCaster : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
         WarningUI.SetActive(false);
     }
+
+    IEnumerator FindBridge()
+    {
+       
+        yield return new WaitForSeconds(1.0f);
+         Bridge= GameObject.FindGameObjectsWithTag("Bridge")[0];
+    }
+
+   
 }

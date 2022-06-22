@@ -23,6 +23,7 @@ public class Bridge : MonoBehaviour
     public Text RequiretWoodUI;
     public Text CurrentPhaseUI;
     public Text TimeUI;
+    public bool StopTime=false;
     // Start is called before the first frame update
     private void Start()
     {
@@ -77,8 +78,12 @@ public class Bridge : MonoBehaviour
 
     public void Time()
     {
-        time++;
-        TimeUI.text=time.ToString();
+        if(!StopTime)
+        {
+            time++;
+            TimeUI.text=time.ToString();
+        }
+        
     }
 
     public void GoBackPreivousPhase()

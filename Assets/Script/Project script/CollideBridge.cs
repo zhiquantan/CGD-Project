@@ -7,6 +7,14 @@ public class CollideBridge : MonoBehaviour
 {
     public Image BridgeLife;
     public GameObject Bridge;
+    public GameObject AnimalSpawn;
+
+    void Start()
+    {
+        StartCoroutine(FindAnimalSpawnObject());
+        
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag=="Animal")
@@ -15,7 +23,16 @@ public class CollideBridge : MonoBehaviour
             {
                 BridgeLife.fillAmount=BridgeLife.fillAmount-0.1f;
             }
+            
             Destroy(other.gameObject);
+            AnimalSpawn.GetComponent<SpawnAnimal>().count=AnimalSpawn.GetComponent<SpawnAnimal>().count-1;
         }
     }
+    IEnumerator FindAnimalSpawnObject()
+    {
+       
+        yield return new WaitForSeconds(1.0f);
+         AnimalSpawn= GameObject.FindGameObjectsWithTag("AnimalSpawnObject")[0];
+    }
+    
 }
