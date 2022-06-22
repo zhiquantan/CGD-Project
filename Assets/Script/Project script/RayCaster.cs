@@ -81,7 +81,8 @@ public class RayCaster : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log("A");
+                    Destroy(Hit.gameObject);
+                    Debug.Log("Animal Die");
                 }
 
                 

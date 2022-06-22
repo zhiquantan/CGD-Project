@@ -28,7 +28,7 @@ public class GameMenuLeaderboard : MonoBehaviour
         while (PhotonNetwork.IsConnected)
             yield return null;
 
-        FindObjectOfType<APISystem>().InsertPlayerActivity(PlayerPrefs.GetString("username"), "score_point-Quan", "add", Math.Round(scoreData).ToString());
+        FindObjectOfType<APISystem>().InsertPlayerActivity(PlayerPrefs.GetString("username"), "WoodPoint", "add", Math.Round(scoreData).ToString());
         SceneManager.LoadScene(4);
     }
 
@@ -38,7 +38,7 @@ public class GameMenuLeaderboard : MonoBehaviour
         while (PhotonNetwork.IsConnected)
             yield return null;
 
-        FindObjectOfType<APISystem>().InsertPlayerActivity(PlayerPrefs.GetString("username"), "score_point-Quan", "add", Math.Round(scoreData).ToString());
+        FindObjectOfType<APISystem>().InsertPlayerActivity(PlayerPrefs.GetString("username"), "WoodPoint", "add", Math.Round(scoreData).ToString());
         SceneManager.LoadScene(1);
     }
 
