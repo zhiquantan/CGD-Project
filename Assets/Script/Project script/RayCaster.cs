@@ -15,6 +15,8 @@ public class RayCaster : MonoBehaviour
     public Text currentStoneUI;
     public GameObject WarningUI;
     public GameObject Bridge;
+    public int AttackDamage=1;
+    public GameObject Player;
     void Start()
     {
         StartCoroutine(FindBridge());
@@ -29,7 +31,7 @@ public class RayCaster : MonoBehaviour
     {
         var ray = new Ray(transform.position, this.transform.TransformDirection(Vector3.forward));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit,60))
+        if (Physics.Raycast(ray, out hit,100))
         {
             //Debug.DrawRay(transform.position, this.transform.TransformDirection(Vector3.forward)*hit.distance,Color.red);
              Hit = hit.transform.gameObject;
@@ -82,8 +84,7 @@ public class RayCaster : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Destroy(Hit.gameObject);
-                    Debug.Log("Animal Die");
+                    Hit.gameObject.GetComponent<AttackedCount>().Attackcount=Hit.gameObject.GetComponent<AttackedCount>().Attackcount+AttackDamage;
                 }
 
                 
@@ -102,6 +103,48 @@ public class RayCaster : MonoBehaviour
                     currentWood=0;
                     currentStone=0;
                     Bridge.GetComponent<Bridge>().Phase();
+                }
+                
+            }
+            
+            else if (Hit.tag == "StopTime")
+            {
+
+                MaterialIcon.GetComponent<SpriteRenderer>().enabled = true;
+                NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
+
+            if (Input.GetMouseButtonDown(0))
+                {
+                    Destroy(Hit.gameObject);
+                    StartCoroutine(StopTime());
+                }
+                
+            }
+
+            else if (Hit.tag == "IncreaseDamage")
+            {
+
+                MaterialIcon.GetComponent<SpriteRenderer>().enabled = true;
+                NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
+
+            if (Input.GetMouseButtonDown(0))
+                {
+                    Destroy(Hit.gameObject);
+                    StartCoroutine(IncreaseDamage());
+                }
+                
+            }
+
+            else if (Hit.tag == "IncreaseSpeed")
+            {
+
+                MaterialIcon.GetComponent<SpriteRenderer>().enabled = true;
+                NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
+
+            if (Input.GetMouseButtonDown(0))
+                {
+                    Destroy(Hit.gameObject);
+                    StartCoroutine(InreaseSpeed());
                 }
                 
             }
@@ -128,6 +171,31 @@ public class RayCaster : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
          Bridge= GameObject.FindGameObjectsWithTag("Bridge")[0];
     }
+
+    IEnumerator InreaseSpeed()
+    {
+       Player.GetComponent<SC_FPSController>().walkingSpeed=40;
+       Player.GetComponent<SC_FPSController>().runningSpeed=60;
+       yield return new WaitForSeconds(10.0f);
+        Player.GetComponent<SC_FPSController>().walkingSpeed=20;
+       Player.GetComponent<SC_FPSController>().runningSpeed=30;
+    }
+
+    IEnumerator StopTime()
+    {
+       Bridge.GetComponent<Bridge>().StopTime=true;
+       yield return new WaitForSeconds(20.0f);
+       Bridge.GetComponent<Bridge>().StopTime=false; 
+    }
+
+    IEnumerator IncreaseDamage()
+    {
+       AttackDamage=2;
+       yield return new WaitForSeconds(20.0f);
+       AttackDamage=1;
+       
+    }
+
 
    
 }

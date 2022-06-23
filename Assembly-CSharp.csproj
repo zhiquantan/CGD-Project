@@ -51,6 +51,7 @@
      <Compile Include="Assets\Script\PlayerListItem.cs" />
      <Compile Include="Assets\Script\PlayerManager.cs" />
      <Compile Include="Assets\Script\PlayerMovement.cs" />
+     <Compile Include="Assets\Script\Project script\Animal\AttackedCount.cs" />
      <Compile Include="Assets\Script\Project script\AnimalAIMovement.cs" />
      <Compile Include="Assets\Script\Project script\Bridge\Bridge.cs" />
      <Compile Include="Assets\Script\Project script\Bridge\GameOver.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\Script\Project script\SC_FPSController.cs" />
      <Compile Include="Assets\Script\Project script\SpawnAnimal.cs" />
      <Compile Include="Assets\Script\Project script\SpawnMaterial.cs" />
+     <Compile Include="Assets\Script\Project script\SupriseElement\SpawnSupriseElement.cs" />
      <Compile Include="Assets\Script\Return.cs" />
      <Compile Include="Assets\Script\RoomListItem.cs" />
      <Compile Include="Assets\Script\SpawnCharacterUI.cs" />

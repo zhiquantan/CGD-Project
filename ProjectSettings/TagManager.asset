@@ -23,6 +23,9 @@ TagManager:
   - Bridge
   - GameOverUIFinder
   - AnimalSpawnObject
+  - StopTime
+  - IncreaseSpeed
+  - IncreaseDamage
   layers:
   - Default
   - TransparentFX
