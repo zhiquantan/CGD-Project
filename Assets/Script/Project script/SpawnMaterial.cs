@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using System.IO;
+
 
 public class SpawnMaterial : MonoBehaviour
 {
@@ -14,7 +17,11 @@ public class SpawnMaterial : MonoBehaviour
     
     void Start()
 {
-    StartCoroutine(EnemyDrop());
+    if (PhotonNetwork.IsMasterClient)
+    {
+        StartCoroutine(EnemyDrop());
+    }
+    
 }
 
 IEnumerator EnemyDrop()
@@ -28,13 +35,15 @@ IEnumerator EnemyDrop()
 
         if(no==1&&count1<=5)
         {
-            Instantiate(Material1,new Vector3(xPos,60,zPos),Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Material1"), new Vector3(xPos,60,zPos), Quaternion.identity);
+            //Instantiate(Material1,new Vector3(xPos,60,zPos),Quaternion.identity);
             yield return new WaitForSeconds(5);
             count1++;
         }
         else if(no==2&&count2<=5)
         {
-            Instantiate(Material2,new Vector3(xPos,60,zPos),Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Material2"), new Vector3(xPos,60,zPos), Quaternion.identity);
+            //Instantiate(Material2,new Vector3(xPos,60,zPos),Quaternion.identity);
             yield return new WaitForSeconds(5);
             count2++;
         }

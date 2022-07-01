@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using System.IO;
 
 public class SpawnAnimal : MonoBehaviour
 {
@@ -13,7 +15,11 @@ public class SpawnAnimal : MonoBehaviour
     
     void Start()
 {
-    StartCoroutine(EnemyDrop());
+    if (PhotonNetwork.IsMasterClient)
+    {
+        StartCoroutine(EnemyDrop());
+    }
+    
 }
 
 IEnumerator EnemyDrop()
@@ -26,13 +32,15 @@ IEnumerator EnemyDrop()
        
         if(no==1)
         {
-            Instantiate(Animal1,new Vector3(xPos,92,zPos),Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Animal1"), new Vector3(xPos,92,zPos), Quaternion.identity);
+            //Instantiate(Animal1,new Vector3(xPos,92,zPos),Quaternion.identity);
             yield return new WaitForSeconds(5);
             count++;
         }
         else if(no==2)
         {
-            Instantiate(Animal2,new Vector3(xPos,83,zPos),Quaternion.identity);
+             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Animal2"), new Vector3(xPos,83,zPos), Quaternion.identity);
+           // Instantiate(Animal2,new Vector3(xPos,83,zPos),Quaternion.identity);
             yield return new WaitForSeconds(5);
             count++;
         }
