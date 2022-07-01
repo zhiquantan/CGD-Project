@@ -27,8 +27,8 @@ public class Bridge : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        requireWood=20;
-        requireStone=20;
+        requireWood=1;
+        requireStone=1;
         CurrentPhase=0;
         InvokeRepeating("HpReduce", 0, 1f);
          InvokeRepeating("Time", 0, 1f);

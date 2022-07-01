@@ -36,6 +36,7 @@ public class GameOver : MonoBehaviour
     {
        
         yield return new WaitForSeconds(1.0f);
+        Bridge= GameObject.FindGameObjectsWithTag("Bridge")[0];
         GameOverUIFinder= GameObject.FindGameObjectsWithTag("GameOverUIFinder")[0];
         Player=GameObject.FindGameObjectsWithTag("Player");
     }

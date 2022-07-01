@@ -27,17 +27,17 @@ public class PlayerManager : MonoBehaviour
     {
         if (CharacterSelection.ChoosedCharacter == 0)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController 1"), Vector3.zero, Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController 0"), new Vector3(89f,43.2f,244.8f), Quaternion.identity);
         }
 
         else if (CharacterSelection.ChoosedCharacter == 1)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController 2"), Vector3.zero, Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController 1"), new Vector3(171.6f,43.2f,244.8f), Quaternion.identity);
         }
 
         else if (CharacterSelection.ChoosedCharacter == 2)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), Vector3.zero, Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), new Vector3(113f,43.2f,208f), Quaternion.identity);
         }
 
     }

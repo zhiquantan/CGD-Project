@@ -1,6 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
+using Photon.Pun;
+using System;
 
 [RequireComponent(typeof(CharacterController))]
 
@@ -15,6 +20,7 @@ public class SC_FPSController : MonoBehaviour
     public float lookXLimit = 45.0f;
     public float curSpeedX;
     public float curSpeedY;
+    PhotonView PV;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -23,8 +29,17 @@ public class SC_FPSController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    void Awake()
+    {
+        PV = GetComponent<PhotonView>();
+    }
+
     void Start()
     {
+        if (!PV.IsMine)
+        {
+            GetComponentInChildren<Camera>().enabled = false;
+        }
         characterController = GetComponent<CharacterController>();
 
         // Lock cursor
@@ -34,6 +49,8 @@ public class SC_FPSController : MonoBehaviour
 
     void Update()
     {
+        if (!PV.IsMine)
+            return;
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);

@@ -11,21 +11,25 @@ public class RayCaster : MonoBehaviour
     public GameObject MaterialIcon;
     public int currentWood=0;
     public int currentStone=0;
-    public Text currentWoodUI;
-    public Text currentStoneUI;
+    public GameObject currentWoodUI;
+    public GameObject currentStoneUI;
     public GameObject WarningUI;
     public GameObject Bridge;
     public int AttackDamage=1;
     public GameObject Player;
     void Start()
     {
+        currentWoodUI=GameObject.FindGameObjectsWithTag("WoodUI")[0];
+        currentStoneUI=GameObject.FindGameObjectsWithTag("RockUI")[0];
+        WarningUI=GameObject.FindGameObjectsWithTag("WarningUI")[0];
+        WarningUI.SetActive(false);
         StartCoroutine(FindBridge());
         
     }
     void Update()
     {
-        currentWoodUI.text=currentWood.ToString();
-        currentStoneUI.text=currentStone.ToString();
+        currentWoodUI.GetComponent<Text>().text=currentWood.ToString();
+        currentStoneUI.GetComponent<Text>().text=currentStone.ToString();
     }
     void FixedUpdate()
     {
@@ -45,7 +49,7 @@ public class RayCaster : MonoBehaviour
                 if (Input.GetMouseButtonDown(0)&&currentStone<5)
                 {
                    currentStone++;
-                   currentStoneUI.text=currentStone.ToString();
+                   currentStoneUI.GetComponent<Text>().text=currentStone.ToString();
                    Destroy(Hit.gameObject);
                    SpawnMaterial.count1--;
                 }
@@ -65,7 +69,7 @@ public class RayCaster : MonoBehaviour
                 if (Input.GetMouseButtonDown(0)&&currentWood<5)
                 {
                    currentWood++;
-                   currentWoodUI.text=currentWood.ToString();
+                   currentWoodUI.GetComponent<Text>().text=currentWood.ToString();
                     Destroy(Hit.gameObject);
                     SpawnMaterial.count2--;
                 }
@@ -170,6 +174,8 @@ public class RayCaster : MonoBehaviour
        
         yield return new WaitForSeconds(1.0f);
          Bridge= GameObject.FindGameObjectsWithTag("Bridge")[0];
+         
+
     }
 
     IEnumerator InreaseSpeed()
