@@ -30,6 +30,8 @@ TagManager:
   - WoodUI
   - RockUI
   - WarningUI
+  - FxTemporaire
+  - punchfx
   layers:
   - Default
   - TransparentFX

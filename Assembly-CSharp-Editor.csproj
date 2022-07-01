@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
      <Compile Include="Assets\PolygonPi\FenceLayout\Editor\FenceLayoutEditor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -252,6 +253,9 @@
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
         <HintPath>C:\Users\ASUS\Documents\unity\CGD-Project\Library\PackageCache\com.unity.render-pipelines.core@7.7.1\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="JMOAssets_CartoonFXFreeWelcome">
+        <HintPath>C:\Users\ASUS\Documents\unity\CGD-Project\Assets\JMO Assets\Editor\JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>C:\Users\ASUS\Documents\unity\CGD-Project\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

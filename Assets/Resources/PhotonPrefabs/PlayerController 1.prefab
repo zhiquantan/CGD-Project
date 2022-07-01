@@ -4554,6 +4554,7 @@ MonoBehaviour:
   Bridge: {fileID: 0}
   AttackDamage: 1
   Player: {fileID: 3665272415904844814}
+  punchfx: {fileID: 0}
 --- !u!1 &5320328128189705879
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,11 +17,13 @@ public class RayCaster : MonoBehaviour
     public GameObject Bridge;
     public int AttackDamage=1;
     public GameObject Player;
+    public ParticleSystem punchfx;
     void Start()
     {
         currentWoodUI=GameObject.FindGameObjectsWithTag("WoodUI")[0];
         currentStoneUI=GameObject.FindGameObjectsWithTag("RockUI")[0];
         WarningUI=GameObject.FindGameObjectsWithTag("WarningUI")[0];
+        punchfx = GameObject.FindGameObjectsWithTag("punchfx")[0].GetComponent<ParticleSystem>();
         WarningUI.SetActive(false);
         StartCoroutine(FindBridge());
         
@@ -89,6 +91,8 @@ public class RayCaster : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     Hit.gameObject.GetComponent<AttackedCount>().Attackcount=Hit.gameObject.GetComponent<AttackedCount>().Attackcount+AttackDamage;
+                    punchfx.transform.position = hit.point;
+                    punchfx.Play();
                 }
 
                 
