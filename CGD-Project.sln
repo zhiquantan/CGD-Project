@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StylizedWaterForURPEditor",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Utilities.Culling.Editor", "PhotonUnityNetworking.Utilities.Culling.Editor.csproj", "{bee1f07c-c72a-444e-772d-6775fa7aa936}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{e5d081d8-f6ae-be7f-18d3-f56460f5b797}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,8 @@ Global
 		{c015c421-d6bf-9f2d-2937-3472e4c11138}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{bee1f07c-c72a-444e-772d-6775fa7aa936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{bee1f07c-c72a-444e-772d-6775fa7aa936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{e5d081d8-f6ae-be7f-18d3-f56460f5b797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{e5d081d8-f6ae-be7f-18d3-f56460f5b797}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
