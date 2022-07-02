@@ -30,7 +30,7 @@ MonoBehaviour:
     showEyeDropper: 1
   hueShift:
     m_OverrideState: 1
-    m_Value: -7
+    m_Value: -10
     min: -180
     max: 180
   saturation:
@@ -194,7 +194,7 @@ MonoBehaviour:
     m_Value: {x: 0.8694735, y: 1, z: 0.9908085, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.9860465, y: 0.99216497, z: 1, w: 0}
+    m_Value: {x: 0.9860465, y: 0.99216497, z: 1, w: -0.11235955}
   gain:
     m_OverrideState: 1
     m_Value: {x: 0.92904514, y: 1, z: 0.9106549, w: 0}
