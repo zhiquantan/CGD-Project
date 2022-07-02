@@ -33,6 +33,9 @@ public class Login : MonoBehaviour
             PlayerPrefs.SetString("username", userName.text);
             FindObjectOfType<APISystem>().GetPlayer(userName.text);
             signupStatus.SetActive(false);
+            SceneManager.LoadScene("Room");
+            
+
         }
     }
 
