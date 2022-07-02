@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using System.IO;
 
 public class SpawnSupriseElement : MonoBehaviour
 {
@@ -13,39 +15,49 @@ public class SpawnSupriseElement : MonoBehaviour
     public bool SpawnObject=true;
     
     void Start()
-{
-    StartCoroutine(EnemyDrop());
-}
-
-IEnumerator EnemyDrop()
-{
-    while(SpawnObject)
     {
-        xPos=Random.Range(-5,420);
-        zPos=Random.Range(-50,230);
-        no=Random.Range(0,15);
-        
-
-        if(no==1)
+        if (PhotonNetwork.IsMasterClient)
         {
-            Instantiate(Booster1,new Vector3(xPos,60,zPos),Quaternion.identity);
-            yield return new WaitForSeconds(5);
-            
-        }
-        else if(no==2)
-        {
-            Instantiate(Booster2,new Vector3(xPos,60,zPos),Quaternion.identity);
-            yield return new WaitForSeconds(5);
-            
-        }
-
-        else if(no==2)
-        {
-            Instantiate(Booster3,new Vector3(xPos,60,zPos),Quaternion.identity);
-            yield return new WaitForSeconds(5);
-            
+            StartCoroutine(EnemyDrop());
         }
         
     }
-}
-}
+
+    IEnumerator EnemyDrop()
+    {
+        while(SpawnObject)
+        {
+            xPos=Random.Range(-5,420);
+            zPos=Random.Range(-50,230);
+            no=Random.Range(0,15);
+            
+
+            if(no==1)
+            {
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster1"), new Vector3(xPos,55,zPos), Quaternion.identity);
+                //Instantiate(,new Vector3(xPos,60,zPos),Quaternion.identity);
+                yield return new WaitForSeconds(5);
+                
+            }
+            else if(no==5)
+            {
+                 PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster2"), new Vector3(xPos,55,zPos), Quaternion.identity);
+                //Instantiate(Booster2,new Vector3(xPos,60,zPos),Quaternion.identity);
+                yield return new WaitForSeconds(5);
+                
+            }
+
+            else if(no==10)
+            {
+                 PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster3"), new Vector3(xPos,55,zPos), Quaternion.identity);
+                //Instantiate(Booster3,new Vector3(xPos,60,zPos),Quaternion.identity);
+                yield return new WaitForSeconds(5);
+                
+            }
+            else{
+                 yield return new WaitForSeconds(3);
+            }
+            
+        }
+    }
+    }

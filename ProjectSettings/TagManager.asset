@@ -32,6 +32,8 @@ TagManager:
   - WarningUI
   - FxTemporaire
   - punchfx
+  - WUI
+  - WT
   layers:
   - Default
   - TransparentFX

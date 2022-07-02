@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
+using Photon.Realtime;
+using Photon.Pun;
+using System;
+using System.Linq;
+using System.IO;
 
 public class RayCaster : MonoBehaviour
 {
@@ -17,28 +24,47 @@ public class RayCaster : MonoBehaviour
     public GameObject Bridge;
     public int AttackDamage = 1;
     public GameObject Player;
+    private bool warningFind=false;
     public ParticleSystem punchfx;
     public AudioSource moosedeath;
     public AudioSource foxdeath;
+    public bool FindWT=false;
+    PhotonView PV;
+
+    void Awake()
+    {
+        PV = GetComponent<PhotonView>();
+    }
+
     void Start()
     {
-        currentWoodUI = GameObject.FindGameObjectsWithTag("WoodUI")[0];
-        currentStoneUI = GameObject.FindGameObjectsWithTag("RockUI")[0];
-        WarningUI = GameObject.FindGameObjectsWithTag("WarningUI")[0];
+        
+        currentWoodUI=GameObject.FindGameObjectsWithTag("WoodUI")[0];
+        currentStoneUI=GameObject.FindGameObjectsWithTag("RockUI")[0];
         punchfx = GameObject.FindGameObjectsWithTag("punchfx")[0].GetComponent<ParticleSystem>();
         moosedeath = GameObject.Find("moosedeath").GetComponent<AudioSource>();
         foxdeath = GameObject.Find("foxdeath").GetComponent<AudioSource>();
-        WarningUI.SetActive(false);
         StartCoroutine(FindBridge());
-
+        
     }
+    
     void Update()
     {
-        currentWoodUI.GetComponent<Text>().text = currentWood.ToString();
-        currentStoneUI.GetComponent<Text>().text = currentStone.ToString();
+        if(FindWT==false)
+        {
+           StartCoroutine(FindWarningText());
+             
+        }
+        if (!PV.IsMine)
+        return;
+        currentWoodUI.GetComponent<Text>().text=currentWood.ToString();
+        currentStoneUI.GetComponent<Text>().text=currentStone.ToString();
+        
+        
     }
     void FixedUpdate()
     {
+        
         var ray = new Ray(transform.position, this.transform.TransformDirection(Vector3.forward));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100))
@@ -54,10 +80,11 @@ public class RayCaster : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0) && currentStone < 5)
                 {
-                    currentStone++;
-                    currentStoneUI.GetComponent<Text>().text = currentStone.ToString();
-                    Destroy(Hit.gameObject);
-                    SpawnMaterial.count1--;
+                   currentStone++;
+                   currentStoneUI.GetComponent<Text>().text=currentStone.ToString();
+                   PV.RPC("RPC_GetStone", RpcTarget.AllBuffered, Hit.gameObject);
+                //    PhotonNetwork.Destroy(Hit.gameObject);
+                //    SpawnMaterial.count1--;
                 }
 
                 else if (Input.GetMouseButtonDown(0) && currentStone >= 5)
@@ -74,10 +101,11 @@ public class RayCaster : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0) && currentWood < 5)
                 {
-                    currentWood++;
-                    currentWoodUI.GetComponent<Text>().text = currentWood.ToString();
-                    Destroy(Hit.gameObject);
-                    SpawnMaterial.count2--;
+                   currentWood++;
+                   currentWoodUI.GetComponent<Text>().text=currentWood.ToString();
+                   PV.RPC("RPC_GetWood", RpcTarget.AllBuffered, Hit.gameObject);
+                    // PhotonNetwork.Destroy(Hit.gameObject);
+                    // SpawnMaterial.count2--;
                 }
 
                 else if (Input.GetMouseButtonDown(0) && currentWood >= 5)
@@ -118,13 +146,18 @@ public class RayCaster : MonoBehaviour
                 MaterialIcon.GetComponent<SpriteRenderer>().enabled = true;
                 NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
 
-                if (Input.GetMouseButtonDown(0))
+                
+
+            if (Input.GetMouseButtonDown(0))
                 {
-                    Bridge.GetComponent<Bridge>().currentWood = Bridge.GetComponent<Bridge>().currentWood + currentWood;
-                    Bridge.GetComponent<Bridge>().currentStone = Bridge.GetComponent<Bridge>().currentStone + currentStone;
-                    currentWood = 0;
-                    currentStone = 0;
-                    Bridge.GetComponent<Bridge>().Phase();
+                    
+                    PV.RPC("RPC_BuildBridge", RpcTarget.AllBuffered,currentWood,currentStone );
+                    currentWood=0;
+                    currentStone=0;
+                    // Bridge.GetComponent<Bridge>().currentWood=Bridge.GetComponent<Bridge>().currentWood+currentWood;
+                    // Bridge.GetComponent<Bridge>().currentStone=Bridge.GetComponent<Bridge>().currentStone+currentStone;
+                    
+                    // Bridge.GetComponent<Bridge>().Phase();
                 }
 
             }
@@ -135,12 +168,15 @@ public class RayCaster : MonoBehaviour
                 MaterialIcon.GetComponent<SpriteRenderer>().enabled = true;
                 NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
 
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Destroy(Hit.gameObject);
-                    StartCoroutine(StopTime());
-                }
+                
 
+             if (Input.GetMouseButtonDown(0))
+                 {
+                    PV.RPC("RPC_StopTime", RpcTarget.AllBuffered, Hit);
+                    //  PhotonNetwork.Destroy(Hit.gameObject);
+                    // StartCoroutine(StopTime());
+                 }
+                
             }
 
             else if (Hit.tag == "IncreaseDamage")
@@ -151,7 +187,8 @@ public class RayCaster : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Destroy(Hit.gameObject);
+                    // PhotonNetwork.Destroy(Hit.gameObject);
+                    PV.RPC("RPC_IncreaseDamage", RpcTarget.AllBuffered, Hit);
                     StartCoroutine(IncreaseDamage());
                 }
 
@@ -165,7 +202,8 @@ public class RayCaster : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Destroy(Hit.gameObject);
+                   PhotonNetwork.Destroy(Hit.gameObject);
+                   PV.RPC("RPC_IncreaseSpeed", RpcTarget.AllBuffered, Hit);
                     StartCoroutine(InreaseSpeed());
                 }
 
@@ -179,6 +217,7 @@ public class RayCaster : MonoBehaviour
                 NothingIcon.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
+        
     }
     IEnumerator WarningText()
     {
@@ -189,10 +228,8 @@ public class RayCaster : MonoBehaviour
 
     IEnumerator FindBridge()
     {
-
-        yield return new WaitForSeconds(1.0f);
-        Bridge = GameObject.FindGameObjectsWithTag("Bridge")[0];
-
+        yield return new WaitForSeconds(4.0f);
+         Bridge= GameObject.FindGameObjectsWithTag("Bridge")[0];
 
     }
 
@@ -218,6 +255,73 @@ public class RayCaster : MonoBehaviour
         yield return new WaitForSeconds(20.0f);
         AttackDamage = 1;
 
+    }
+
+    IEnumerator FindWarningText()
+    {
+       WarningUI=GameObject.FindGameObjectsWithTag("WT")[0];
+        yield return new WaitForSeconds(1.0f);
+        FindWT=true;
+        WarningUI.SetActive(false);
+         
+
+    }
+
+    [PunRPC]
+    void RPC_StopTime(GameObject Hit)
+    {
+         
+    PhotonNetwork.Destroy(Hit.gameObject);
+    StartCoroutine(StopTime());
+                 
+    }
+
+    [PunRPC]
+    void RPC_BuildBridge(int currentWood, int currentStone)
+    {
+    // Debug.Log(currentWood);
+    // Debug.Log(currentStone);
+    Bridge.GetComponent<Bridge>().currentWood=Bridge.GetComponent<Bridge>().currentWood+currentWood;
+    Bridge.GetComponent<Bridge>().currentStone=Bridge.GetComponent<Bridge>().currentStone+currentStone;
+                    
+    Bridge.GetComponent<Bridge>().Phase();
+                 
+    }
+
+    [PunRPC]
+    void RPC_GetStone(GameObject Hit)
+    {
+         
+    PhotonNetwork.Destroy(Hit);
+    SpawnMaterial.count1--;
+                 
+    }
+
+    [PunRPC]
+    void RPC_GetWood(GameObject Hit)
+    {
+         
+    PhotonNetwork.Destroy(Hit);
+    SpawnMaterial.count2--;
+                 
+    }
+
+    [PunRPC]
+    void RPC_IncreaseDamage(GameObject Hit)
+    {
+         
+    PhotonNetwork.Destroy(Hit.gameObject);
+    
+                 
+    }
+
+    [PunRPC]
+    void RPC_IncreaseSpeed(GameObject Hit)
+    {
+         
+    PhotonNetwork.Destroy(Hit.gameObject);
+    
+                 
     }
 
 
