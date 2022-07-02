@@ -13,6 +13,10 @@ public class APISystem : MonoBehaviour
     public ContainerA containerA; //user details
     public ContainerB containerB; //leaderboard details
 
+    public InputField username;
+    public InputField password;
+    public GameObject LoginStage;
+
     public void GetLeaderboard()
     {
         StartCoroutine(GetLeaderboardController());
@@ -113,6 +117,28 @@ public class APISystem : MonoBehaviour
 
             Debug.Log((www.downloadHandler.text));
             containerA = JsonUtility.FromJson<ContainerA>(www.downloadHandler.text);
+
+            Debug.Log(containerA.message.id);
+
+            if(containerA.status == "0")
+            {
+                Debug.Log("Login Fail");
+                LoginStage.SetActive(true);
+            }
+
+            else if (containerA.status == "1")
+            {
+                if (password.text == containerA.message.id)
+                    
+                    Debug.Log(username.text);
+                Debug.Log("Name :" + PlayerPrefs.GetString("username"));
+                LoginStage.SetActive(false);
+            }
+            else
+            {
+                LoginStage.SetActive(true);
+                Debug.Log("Failed");
+            }
         }
     }
 

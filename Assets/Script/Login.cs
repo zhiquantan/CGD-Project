@@ -6,31 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class Login : MonoBehaviour
 {
-    public Text userName;
+    public InputField userName;
+    public InputField password; 
     public APISystem api;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void savePlayerName(string sceneMenu)
+    public GameObject playerLogin;
+    public GameObject playerSignUp;
+    public GameObject signupStatus;
+ 
+    public void savePlayerName()
     {
         if (string.IsNullOrEmpty(userName.text))
         {
             Debug.Log("Enter the username");
+            if (string.IsNullOrEmpty (password.text))
+            {
+                Debug.Log("Enter the username and password");
+            }
+        }
+        if (string.IsNullOrEmpty (password.text))
+        {
+            Debug.Log("Enter the password");
         }
         else
         {
             PlayerPrefs.SetString("username", userName.text);
-            FindObjectOfType<APISystem>().Register(userName.text, userName.text, userName.text, userName.text);
-            SceneManager.LoadScene(1);
+            FindObjectOfType<APISystem>().GetPlayer(userName.text);
+            signupStatus.SetActive(false);
         }
     }
 
