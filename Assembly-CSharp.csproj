@@ -36,19 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\Photon\PhotonLibs\WebSocket\SocketWebTcp.cs" />
      <Compile Include="Assets\Photon\PhotonLibs\WebSocket\WebSocket.cs" />
-     <Compile Include="Assets\PolygonPi\FenceLayout\FenceLayout.cs" />
      <Compile Include="Assets\Script\APIData.cs" />
      <Compile Include="Assets\Script\APISystem.cs" />
      <Compile Include="Assets\Script\CharacterSelection.cs" />
@@ -80,8 +69,6 @@
      <Compile Include="Assets\Script\RoomListItem.cs" />
      <Compile Include="Assets\Script\SpawnCharacterUI.cs" />
      <Compile Include="Assets\Script\roomManager.cs" />
-     <Compile Include="Assets\Stylized Water For URP\Demos\Buoyancy\BuoyantObject.cs" />
-     <Compile Include="Assets\Stylized Water For URP\Demos\Buoyancy\GerstnerWaveDisplacement.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -116,58 +103,71 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-     <Compile Include="Assets\simple modular human\scripts\Test_script.cs" />
-     <Compile Include="Assets\simple modular human\scripts\clothing.cs" />
+     <Compile Include="Assets\assets folder\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+     <Compile Include="Assets\assets folder\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
+     <Compile Include="Assets\assets folder\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
+     <Compile Include="Assets\assets folder\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+     <Compile Include="Assets\assets folder\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+     <Compile Include="Assets\assets folder\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
+     <Compile Include="Assets\assets folder\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
+     <Compile Include="Assets\assets folder\JMO Assets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
+     <Compile Include="Assets\assets folder\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
+     <Compile Include="Assets\assets folder\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets\assets folder\PolygonPi\FenceLayout\FenceLayout.cs" />
+     <Compile Include="Assets\assets folder\Stylized Water For URP\Demos\Buoyancy\BuoyantObject.cs" />
+     <Compile Include="Assets\assets folder\Stylized Water For URP\Demos\Buoyancy\GerstnerWaveDisplacement.cs" />
+     <Compile Include="Assets\assets folder\simple modular human\scripts\Test_script.cs" />
+     <Compile Include="Assets\assets folder\simple modular human\scripts\clothing.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-     <None Include="Assets\simple modular human\readMe.txt" />
+     <None Include="Assets\assets folder\simple modular human\readMe.txt" />
      <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-     <None Include="Assets\Stylized Water For URP\Shaders\Libraries\WaterFoam.hlsl" />
-     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Shaders\Libraries\WaterFoam.hlsl" />
+     <None Include="Assets\assets folder\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />
-     <None Include="Assets\Stylized Water For URP\Scripts\UI\Acknowledgements.uxml" />
-     <None Include="Assets\Stylized Water For URP\Scripts\UI\Find Errors.uss" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Scripts\UI\Acknowledgements.uxml" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Scripts\UI\Find Errors.uss" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-     <None Include="Assets\JMO Assets\Cartoon FX\CartoonFX Free.txt" />
+     <None Include="Assets\assets folder\JMO Assets\Cartoon FX\CartoonFX Free.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-     <None Include="Assets\Stylized Water For URP\Scripts\UI\About.uxml" />
-     <None Include="Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
-     <None Include="Assets\Stylized Water For URP\Scripts\UI\Support.uxml" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Scripts\UI\About.uxml" />
+     <None Include="Assets\assets folder\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Scripts\UI\Support.uxml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-     <None Include="Assets\Stylized Water For URP\Shaders\Libraries\WaterCaustics.hlsl" />
-     <None Include="Assets\Stylized Water For URP\Shaders\Libraries\WaterLighting.hlsl" />
-     <None Include="Assets\Stylized Water For URP\Scripts\UI\Find Errors.uxml" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Shaders\Libraries\WaterCaustics.hlsl" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Shaders\Libraries\WaterLighting.hlsl" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Scripts\UI\Find Errors.uxml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-     <None Include="Assets\Stylized Water For URP\Scripts\UI\About.uss" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Scripts\UI\About.uss" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets\Photon\PhotonLibs\changes-library.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-     <None Include="Assets\Stylized Water For URP\Shaders\Libraries\Caustics\Caustics.shader" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Shaders\Libraries\Caustics\Caustics.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-     <None Include="Assets\Stylized Water For URP\Scripts\UI\Toolbar.uss" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Scripts\UI\Toolbar.uss" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\Photon\PhotonUnityNetworking\readme.txt" />
-     <None Include="Assets\Stylized Water For URP\Shaders\Libraries\WaterColor.hlsl" />
-     <None Include="Assets\Stylized Water For URP\Shaders\Libraries\StylizedWaterForURP.hlsl" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Shaders\Libraries\WaterColor.hlsl" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Shaders\Libraries\StylizedWaterForURP.hlsl" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-     <None Include="Assets\Stylized Water For URP\Shaders\Libraries\WaterWaves.hlsl" />
-     <None Include="Assets\Customizable Skybox\Stylized Sky\Shaders\Stylized Sky.shader" />
-     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Shaders\Libraries\WaterWaves.hlsl" />
+     <None Include="Assets\assets folder\Customizable Skybox\Stylized Sky\Shaders\Stylized Sky.shader" />
+     <None Include="Assets\assets folder\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
-     <None Include="Assets\Stylized Water For URP\Scripts\UI\Support.uss" />
-     <None Include="Assets\Stylized Water For URP\Scripts\UI\Toolbar.uxml" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Scripts\UI\Support.uss" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Scripts\UI\Toolbar.uxml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
-     <None Include="Assets\Stylized Water For URP\Scripts\UI\Acknowledgements.uss" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Scripts\UI\Acknowledgements.uss" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
@@ -772,10 +772,6 @@
       <Project>{81d35be6-f80e-9717-816e-f8b9911a87d3}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="StylizedWaterForURPEditor.csproj">
-      <Project>{c015c421-d6bf-9f2d-2937-3472e4c11138}</Project>
-      <Name>StylizedWaterForURPEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="PhotonRealtime.csproj">
       <Project>{7f5fc517-f829-9fc0-c6f6-81da9ab2f5a2}</Project>
       <Name>PhotonRealtime</Name>
@@ -783,10 +779,6 @@
     <ProjectReference Include="PhotonUnityNetworking.csproj">
       <Project>{b8821b14-ff77-03b6-4e24-029b898b596b}</Project>
       <Name>PhotonUnityNetworking</Name>
-    </ProjectReference>
-    <ProjectReference Include="StylizedWaterForURP.csproj">
-      <Project>{fa586136-6c2a-3ff4-3c75-ff04a1543af2}</Project>
-      <Name>StylizedWaterForURP</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonChat.csproj">
       <Project>{4a5c02dc-775f-6420-8cac-7522794828a9}</Project>
@@ -799,6 +791,14 @@
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
       <Project>{566695c8-48bc-6677-bf63-f8acd1f05313}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="StylizedWaterForURPEditor.csproj">
+      <Project>{c015c421-d6bf-9f2d-2937-3472e4c11138}</Project>
+      <Name>StylizedWaterForURPEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="StylizedWaterForURP.csproj">
+      <Project>{fa586136-6c2a-3ff4-3c75-ff04a1543af2}</Project>
+      <Name>StylizedWaterForURP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

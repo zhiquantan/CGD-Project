@@ -36,11 +36,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Stylized Water For URP\Scripts\Runtime\Caustics\CausticsFeature.cs" />
-     <Compile Include="Assets\Stylized Water For URP\Scripts\Runtime\Caustics\CausticsPass.cs" />
-     <Compile Include="Assets\Stylized Water For URP\Scripts\Runtime\Reflections\PlanarReflections.cs" />
-     <Compile Include="Assets\Stylized Water For URP\Scripts\Runtime\Water\StylizedWaterURP.cs" />
-     <None Include="Assets\Stylized Water For URP\Scripts\Runtime\Stylized Water For URP Runtime.asmdef" />
+     <Compile Include="Assets\assets folder\Stylized Water For URP\Scripts\Runtime\Caustics\CausticsFeature.cs" />
+     <Compile Include="Assets\assets folder\Stylized Water For URP\Scripts\Runtime\Caustics\CausticsPass.cs" />
+     <Compile Include="Assets\assets folder\Stylized Water For URP\Scripts\Runtime\Reflections\PlanarReflections.cs" />
+     <Compile Include="Assets\assets folder\Stylized Water For URP\Scripts\Runtime\Water\StylizedWaterURP.cs" />
+     <None Include="Assets\assets folder\Stylized Water For URP\Scripts\Runtime\Stylized Water For URP Runtime.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -256,6 +256,9 @@
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
         <HintPath>C:\Users\ASUS\Documents\unity\CGD-Project\Library\PackageCache\com.unity.render-pipelines.core@7.7.1\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="JMOAssets_CartoonFXFreeWelcome">
+        <HintPath>C:\Users\ASUS\Documents\unity\CGD-Project\Assets\assets folder\JMO Assets\Editor\JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.23f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

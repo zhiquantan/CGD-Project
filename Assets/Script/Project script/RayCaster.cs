@@ -18,12 +18,14 @@ public class RayCaster : MonoBehaviour
     public int AttackDamage=1;
     public GameObject Player;
     public ParticleSystem punchfx;
+    public AudioSource moosedeath;
     void Start()
     {
         currentWoodUI=GameObject.FindGameObjectsWithTag("WoodUI")[0];
         currentStoneUI=GameObject.FindGameObjectsWithTag("RockUI")[0];
         WarningUI=GameObject.FindGameObjectsWithTag("WarningUI")[0];
         punchfx = GameObject.FindGameObjectsWithTag("punchfx")[0].GetComponent<ParticleSystem>();
+        moosedeath = GameObject.Find("moosedeath").GetComponent<AudioSource>();
         WarningUI.SetActive(false);
         StartCoroutine(FindBridge());
         
@@ -93,6 +95,11 @@ public class RayCaster : MonoBehaviour
                     Hit.gameObject.GetComponent<AttackedCount>().Attackcount=Hit.gameObject.GetComponent<AttackedCount>().Attackcount+AttackDamage;
                     punchfx.transform.position = hit.point;
                     punchfx.Play();
+                    if(Hit.gameObject.name == "Animal2(Clone)") 
+                    {
+                        moosedeath.transform.position = hit.point;
+                        moosedeath.Play();
+                    }
                 }
 
                 

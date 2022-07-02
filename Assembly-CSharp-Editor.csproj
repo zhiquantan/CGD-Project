@@ -36,8 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
-     <Compile Include="Assets\PolygonPi\FenceLayout\Editor\FenceLayoutEditor.cs" />
+     <Compile Include="Assets\assets folder\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
+     <Compile Include="Assets\assets folder\PolygonPi\FenceLayout\Editor\FenceLayoutEditor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -255,7 +255,7 @@
         <HintPath>C:\Users\ASUS\Documents\unity\CGD-Project\Library\PackageCache\com.unity.render-pipelines.core@7.7.1\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="JMOAssets_CartoonFXFreeWelcome">
-        <HintPath>C:\Users\ASUS\Documents\unity\CGD-Project\Assets\JMO Assets\Editor\JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
+        <HintPath>C:\Users\ASUS\Documents\unity\CGD-Project\Assets\assets folder\JMO Assets\Editor\JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>C:\Users\ASUS\Documents\unity\CGD-Project\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -691,10 +691,6 @@
       <Project>{81d35be6-f80e-9717-816e-f8b9911a87d3}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="StylizedWaterForURPEditor.csproj">
-      <Project>{c015c421-d6bf-9f2d-2937-3472e4c11138}</Project>
-      <Name>StylizedWaterForURPEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="PhotonRealtime.csproj">
       <Project>{7f5fc517-f829-9fc0-c6f6-81da9ab2f5a2}</Project>
       <Name>PhotonRealtime</Name>
@@ -702,10 +698,6 @@
     <ProjectReference Include="PhotonUnityNetworking.csproj">
       <Project>{b8821b14-ff77-03b6-4e24-029b898b596b}</Project>
       <Name>PhotonUnityNetworking</Name>
-    </ProjectReference>
-    <ProjectReference Include="StylizedWaterForURP.csproj">
-      <Project>{fa586136-6c2a-3ff4-3c75-ff04a1543af2}</Project>
-      <Name>StylizedWaterForURP</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonChat.csproj">
       <Project>{4a5c02dc-775f-6420-8cac-7522794828a9}</Project>
@@ -718,6 +710,14 @@
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
       <Project>{566695c8-48bc-6677-bf63-f8acd1f05313}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="StylizedWaterForURPEditor.csproj">
+      <Project>{c015c421-d6bf-9f2d-2937-3472e4c11138}</Project>
+      <Name>StylizedWaterForURPEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="StylizedWaterForURP.csproj">
+      <Project>{fa586136-6c2a-3ff4-3c75-ff04a1543af2}</Project>
+      <Name>StylizedWaterForURP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
