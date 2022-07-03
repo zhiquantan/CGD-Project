@@ -47,6 +47,8 @@ MonoBehaviour:
   - RPC_GetWood
   - RPC_IncreaseDamage
   - RPC_IncreaseSpeed
+  - RPC_KillMaterial
+  - RPC_KillSupriseElement
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

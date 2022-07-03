@@ -1,2 +1,50 @@
-Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.23f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.23f1/Editor/Data/PlaybackEngines'
+Base path: 'D:/2019.4.23f1/Editor/Data', plugins path 'D:/2019.4.23f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=7883 outsize=2542 ok=1
+Cmd: preprocess
+  insize=2591 outsize=734 ok=1
+Cmd: preprocess
+  insize=3642 outsize=1299 ok=1
+Cmd: preprocess
+  insize=12310 outsize=4702 ok=1
+Cmd: preprocess
+  insize=3662 outsize=2718 ok=1
+Cmd: preprocess
+  insize=4513 outsize=3751 ok=1
+Cmd: preprocess
+  insize=3640 outsize=1347 ok=1
+Cmd: preprocess
+  insize=10917 outsize=4057 ok=1
+Cmd: preprocess
+  insize=3177 outsize=2815 ok=1
+Cmd: preprocess
+  insize=6778 outsize=863 ok=1
+Cmd: preprocess
+  insize=3867 outsize=1232 ok=1
+Cmd: preprocess
+  insize=815 outsize=815 ok=1
+Cmd: preprocess
+  insize=8069 outsize=2811 ok=1
+Cmd: preprocess
+  insize=10902 outsize=4047 ok=1
+Cmd: preprocess
+  insize=3694 outsize=1723 ok=1
+Cmd: preprocess
+  insize=7914 outsize=2554 ok=1
+Cmd: preprocess
+  insize=2468 outsize=1177 ok=1
+Cmd: preprocess
+  insize=65173 outsize=1784 ok=1
+Cmd: preprocess
+  insize=64172 outsize=2498 ok=1
+Cmd: preprocess
+  insize=757864 outsize=5780 ok=1
+Cmd: preprocess
+  insize=225369 outsize=3695 ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2815 outsize=798 kw=SOFTPARTICLES_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=3248 outsize=650 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=3248 outsize=3702 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1

@@ -104,8 +104,8 @@ public class Bridge : MonoBehaviour
                 CurrentPhase=1;
                 currentWood=0;
                 currentStone=0;
-                requireStone=requireStone+10;
-                requireWood=requireWood+10;
+                requireStone=requireStone+1;
+                requireWood=requireWood+1;
                 CurrentPhaseUI.text="Phase 1";
                 
             }
@@ -118,8 +118,8 @@ public class Bridge : MonoBehaviour
                 CurrentPhase=2;
                 currentWood=0;
                 currentStone=0;
-                requireStone=requireStone+10;
-                requireWood=requireWood+10;
+                requireStone=requireStone+1;
+                requireWood=requireWood+1;
                 CurrentPhaseUI.text="Phase 2";
                  
             }

@@ -82,7 +82,8 @@ public class RayCaster : MonoBehaviour
                 {
                    currentStone++;
                    currentStoneUI.GetComponent<Text>().text=currentStone.ToString();
-                   PV.RPC("RPC_GetStone", RpcTarget.AllBuffered, Hit.gameObject);
+                   Hit.gameObject.GetComponent<MaterialDestroy>().Obtained=true;
+                //    PV.RPC("RPC_GetStone", RpcTarget.AllBuffered, Hit.gameObject);
                 //    PhotonNetwork.Destroy(Hit.gameObject);
                 //    SpawnMaterial.count1--;
                 }
@@ -103,7 +104,8 @@ public class RayCaster : MonoBehaviour
                 {
                    currentWood++;
                    currentWoodUI.GetComponent<Text>().text=currentWood.ToString();
-                   PV.RPC("RPC_GetWood", RpcTarget.AllBuffered, Hit.gameObject);
+                   Hit.gameObject.GetComponent<MaterialDestroy>().Obtained=true;
+                //    PV.RPC("RPC_GetWood", RpcTarget.AllBuffered, Hit.gameObject);
                     // PhotonNetwork.Destroy(Hit.gameObject);
                     // SpawnMaterial.count2--;
                 }
@@ -172,9 +174,11 @@ public class RayCaster : MonoBehaviour
 
              if (Input.GetMouseButtonDown(0))
                  {
-                    PV.RPC("RPC_StopTime", RpcTarget.AllBuffered, Hit);
+
+                    PV.RPC("RPC_StopTime", RpcTarget.AllBuffered);
+                    Hit.gameObject.GetComponent<DestroySupriseElement>().Obtained=true;
                     //  PhotonNetwork.Destroy(Hit.gameObject);
-                    // StartCoroutine(StopTime());
+                    //  StartCoroutine(StopTime());
                  }
                 
             }
@@ -188,8 +192,10 @@ public class RayCaster : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     // PhotonNetwork.Destroy(Hit.gameObject);
-                    PV.RPC("RPC_IncreaseDamage", RpcTarget.AllBuffered, Hit);
                     StartCoroutine(IncreaseDamage());
+                    Hit.gameObject.GetComponent<DestroySupriseElement>().Obtained=true;
+                    //PV.RPC("RPC_IncreaseDamage", RpcTarget.AllBuffered, Hit);
+                    
                 }
 
             }
@@ -202,9 +208,11 @@ public class RayCaster : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                   PhotonNetwork.Destroy(Hit.gameObject);
-                   PV.RPC("RPC_IncreaseSpeed", RpcTarget.AllBuffered, Hit);
-                    StartCoroutine(InreaseSpeed());
+                   //PhotonNetwork.Destroy(Hit.gameObject);
+                   StartCoroutine(InreaseSpeed());
+                   Hit.gameObject.GetComponent<DestroySupriseElement>().Obtained=true;
+                   //PV.RPC("RPC_IncreaseSpeed", RpcTarget.AllBuffered, Hit);
+                    
                 }
 
             }
@@ -268,10 +276,10 @@ public class RayCaster : MonoBehaviour
     }
 
     [PunRPC]
-    void RPC_StopTime(GameObject Hit)
+    void RPC_StopTime()
     {
          
-    PhotonNetwork.Destroy(Hit.gameObject);
+    // PhotonNetwork.Destroy(Hit.gameObject);
     StartCoroutine(StopTime());
                  
     }
@@ -288,41 +296,41 @@ public class RayCaster : MonoBehaviour
                  
     }
 
-    [PunRPC]
-    void RPC_GetStone(GameObject Hit)
-    {
+    // [PunRPC]
+    // void RPC_GetStone(GameObject Hit)
+    // {
          
-    PhotonNetwork.Destroy(Hit);
-    SpawnMaterial.count1--;
+    // PhotonNetwork.Destroy(Hit);
+    // SpawnMaterial.count1--;
                  
-    }
+    // }
 
-    [PunRPC]
-    void RPC_GetWood(GameObject Hit)
-    {
+    // [PunRPC]
+    // void RPC_GetWood(GameObject Hit)
+    // {
          
-    PhotonNetwork.Destroy(Hit);
-    SpawnMaterial.count2--;
+    // PhotonNetwork.Destroy(Hit);
+    // SpawnMaterial.count2--;
                  
-    }
+    // }
 
-    [PunRPC]
-    void RPC_IncreaseDamage(GameObject Hit)
-    {
+    // [PunRPC]
+    // void RPC_IncreaseDamage(GameObject Hit)
+    // {
          
-    PhotonNetwork.Destroy(Hit.gameObject);
+    // PhotonNetwork.Destroy(Hit.gameObject);
     
                  
-    }
+    // }
 
-    [PunRPC]
-    void RPC_IncreaseSpeed(GameObject Hit)
-    {
+    // [PunRPC]
+    // void RPC_IncreaseSpeed(GameObject Hit)
+    // {
          
-    PhotonNetwork.Destroy(Hit.gameObject);
+    // PhotonNetwork.Destroy(Hit.gameObject);
     
                  
-    }
+    // }
 
 
 

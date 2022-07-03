@@ -29,27 +29,27 @@ public class SpawnSupriseElement : MonoBehaviour
         {
             xPos=Random.Range(-5,420);
             zPos=Random.Range(-50,230);
-            no=Random.Range(0,15);
+            no=Random.Range(0,4);
             
 
             if(no==1)
             {
-                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster1"), new Vector3(xPos,55,zPos), Quaternion.identity);
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster1"), new Vector3(xPos,60,zPos), Quaternion.identity);
                 //Instantiate(,new Vector3(xPos,60,zPos),Quaternion.identity);
                 yield return new WaitForSeconds(5);
                 
             }
-            else if(no==5)
+            else if(no==2)
             {
-                 PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster2"), new Vector3(xPos,55,zPos), Quaternion.identity);
+                 PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster2"), new Vector3(xPos,60,zPos), Quaternion.identity);
                 //Instantiate(Booster2,new Vector3(xPos,60,zPos),Quaternion.identity);
                 yield return new WaitForSeconds(5);
                 
             }
 
-            else if(no==10)
+            else if(no==3)
             {
-                 PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster3"), new Vector3(xPos,55,zPos), Quaternion.identity);
+                 PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster3"), new Vector3(xPos,60,zPos), Quaternion.identity);
                 //Instantiate(Booster3,new Vector3(xPos,60,zPos),Quaternion.identity);
                 yield return new WaitForSeconds(5);
                 
