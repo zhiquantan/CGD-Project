@@ -18,6 +18,7 @@ public class SC_FPSController : MonoBehaviour
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
+    public string Name;
     public float curSpeedX;
     public float curSpeedY;
     PhotonView PV;
@@ -41,6 +42,7 @@ public class SC_FPSController : MonoBehaviour
             GetComponentInChildren<Camera>().enabled = false;
         }
         characterController = GetComponent<CharacterController>();
+        Name=string.Format(PV.Owner.NickName);
 
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
