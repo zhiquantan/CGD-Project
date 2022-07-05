@@ -24,6 +24,8 @@ public class Bridge : MonoBehaviour
     public Text CurrentPhaseUI;
     public Text TimeUI;
     public bool StopTime=false;
+    public GameObject portal;
+    public GameObject portal2;
     // Start is called before the first frame update
     private void Start()
     {
@@ -104,8 +106,8 @@ public class Bridge : MonoBehaviour
                 CurrentPhase=1;
                 currentWood=0;
                 currentStone=0;
-                requireStone=requireStone+1;
-                requireWood=requireWood+1;
+                requireStone=requireStone+0;
+                requireWood=requireWood+0;
                 CurrentPhaseUI.text="Phase 1";
                 
             }
@@ -118,8 +120,8 @@ public class Bridge : MonoBehaviour
                 CurrentPhase=2;
                 currentWood=0;
                 currentStone=0;
-                requireStone=requireStone+1;
-                requireWood=requireWood+1;
+                requireStone=requireStone+0;
+                requireWood=requireWood+0;
                 CurrentPhaseUI.text="Phase 2";
                  
             }
@@ -132,6 +134,8 @@ public class Bridge : MonoBehaviour
                 Phase3.SetActive(true);
                 CurrentPhaseUI.text="Finished";
                 CurrentPhase=3;
+                portal.SetActive(false);
+                portal2.SetActive(true);
                
             }
         }

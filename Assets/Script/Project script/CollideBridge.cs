@@ -19,7 +19,7 @@ public class CollideBridge : MonoBehaviour
     {
         if(other.tag=="Animal")
         {
-            if(Bridge.GetComponent<Bridge>().CurrentPhase!=0)
+            if(Bridge.GetComponent<Bridge>().CurrentPhase!=0&&Bridge.GetComponent<Bridge>().CurrentPhase!=3)
             {
                 BridgeLife.fillAmount=BridgeLife.fillAmount-0.1f;
             }
