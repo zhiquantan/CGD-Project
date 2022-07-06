@@ -24,8 +24,8 @@ public class GameOverUIFinder : MonoBehaviour
         Timetext.text=Bridge.GetComponent<Bridge>().time.ToString();
         StartCoroutine(CalculateScore());
         
-        //Scoretext.text=(Mathf.Round(score)).ToString();
-        Scoretext.text=name1;
+        Scoretext.text=(Mathf.Round(score)).ToString();
+        //Scoretext.text=name1;
     }
 
     IEnumerator CalculateScore()
