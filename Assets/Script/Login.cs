@@ -24,18 +24,11 @@ public class Login : MonoBehaviour
                 Debug.Log("Enter the username and password");
             }
         }
-        if (string.IsNullOrEmpty (password.text))
-        {
-            Debug.Log("Enter the password");
-        }
         else
         {
             PlayerPrefs.SetString("username", userName.text);
             FindObjectOfType<APISystem>().GetPlayer(userName.text);
             signupStatus.SetActive(false);
-            SceneManager.LoadScene("Room");
-            
-
         }
     }
 

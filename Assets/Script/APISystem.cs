@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class APISystem : MonoBehaviour
 {
@@ -132,6 +133,7 @@ public class APISystem : MonoBehaviour
                     
                     Debug.Log(username.text);
                 Debug.Log("Name :" + PlayerPrefs.GetString("username"));
+		SceneManager.LoadScene("Room");
                 LoginStage.SetActive(false);
             }
             else
