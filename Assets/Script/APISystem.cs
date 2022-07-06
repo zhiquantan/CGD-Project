@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class APISystem : MonoBehaviour
 {
     const string URI = "http://api.tenenet.net";
-    const string token = "66faa96855bf6080192ca1c67a18591e";
-    const string leaderboard_id = "RankHomeBridges";
+    const string token = "50560e216946467e58f7ff2067eb107e";
+    const string leaderboard_id = "HomeToBridge_LeaderboardID";
 
     public ContainerA containerA; //user details
     public ContainerB containerB; //leaderboard details
@@ -129,12 +129,15 @@ public class APISystem : MonoBehaviour
 
             else if (containerA.status == "1")
             {
+                
                 if (password.text == containerA.message.id)
                     
+                    {
                     Debug.Log(username.text);
-                Debug.Log("Name :" + PlayerPrefs.GetString("username"));
-		SceneManager.LoadScene("Room");
-                LoginStage.SetActive(false);
+                    Debug.Log("Name :" + PlayerPrefs.GetString("username"));
+                    SceneManager.LoadScene("Room");
+                    LoginStage.SetActive(false);
+                    }
             }
             else
             {

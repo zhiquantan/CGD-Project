@@ -31,6 +31,10 @@ public class SignUp : MonoBehaviour
 
     public void SignUpPlayer()
     {
+        Debug.Log(userName.text);
+        Debug.Log(password.text);
+        Debug.Log(firstName.text);
+        Debug.Log(lastName.text);
         FindObjectOfType<APISystem>().Register(userName.text, password.text, firstName.text, lastName.text);
         playerSignUp.SetActive(false);
         playerLogin.SetActive(true);

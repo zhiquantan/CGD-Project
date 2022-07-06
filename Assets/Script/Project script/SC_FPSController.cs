@@ -21,6 +21,7 @@ public class SC_FPSController : MonoBehaviour
     public string Name;
     public float curSpeedX;
     public float curSpeedY;
+    public GameObject Over;
     PhotonView PV;
 
     CharacterController characterController;
@@ -33,16 +34,24 @@ public class SC_FPSController : MonoBehaviour
     void Awake()
     {
         PV = GetComponent<PhotonView>();
+        Over=GameObject.FindGameObjectsWithTag("Over")[0];
     }
 
     void Start()
     {
+        
         if (!PV.IsMine)
         {
             GetComponentInChildren<Camera>().enabled = false;
         }
-        characterController = GetComponent<CharacterController>();
         Name=string.Format(PV.Owner.NickName);
+        if (PV.IsMine)
+        {
+            Name=string.Format(PV.Owner.NickName);
+            Over.GetComponent<GameOver>().PlayerName=Name;
+        }
+        characterController = GetComponent<CharacterController>();
+        
 
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;

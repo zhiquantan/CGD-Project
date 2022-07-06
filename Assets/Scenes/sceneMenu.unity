@@ -156,6 +156,7 @@ MonoBehaviour:
   Timetext: {fileID: 2000354045}
   score: 0
   Scoretext: {fileID: 549530104}
+  name: 
 --- !u!4 &166902250
 Transform:
   m_ObjectHideFlags: 0
@@ -1794,7 +1795,7 @@ GameObject:
   - component: {fileID: 1268234324}
   m_Layer: 0
   m_Name: GameOverCollider
-  m_TagString: Untagged
+  m_TagString: Over
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1841,6 +1842,7 @@ MonoBehaviour:
   GameOverUIFinder: {fileID: 166902248}
   Bridge: {fileID: 0}
   Player: []
+  PlayerName: 
 --- !u!1 &1328191629
 GameObject:
   m_ObjectHideFlags: 0

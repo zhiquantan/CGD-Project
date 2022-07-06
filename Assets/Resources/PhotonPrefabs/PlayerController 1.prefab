@@ -2914,6 +2914,7 @@ MonoBehaviour:
   Name: 
   curSpeedX: 0
   curSpeedY: 0
+  Over: {fileID: 0}
   canMove: 1
 --- !u!54 &7280022322204442457
 Rigidbody:

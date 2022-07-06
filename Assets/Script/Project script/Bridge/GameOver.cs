@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
     public GameObject GameOverUIFinder;
     public GameObject Bridge;
     public GameObject[] Player;
+    public string PlayerName;
 
     void Start()
     {
@@ -18,6 +19,8 @@ public class GameOver : MonoBehaviour
         if(other.tag=="Player")
         {   
              GameOverUIFinder.GetComponent<GameOverUIFinder>().enabled=true;
+             GameOverUIFinder.GetComponent<GameOverUIFinder>().name=PlayerName;
+             PlayerPrefs.SetString("username", PlayerName);
              Bridge.GetComponent<Bridge>().StopTime=true;
              Bridge.GetComponent<Bridge>().enabled=false;
              Cursor.visible = true;
