@@ -57,6 +57,7 @@
      <Compile Include="Assets\Script\Project script\Bridge\GameOver.cs" />
      <Compile Include="Assets\Script\Project script\Bridge\GameOverUIFinder.cs" />
      <Compile Include="Assets\Script\Project script\CharacterAnimation.cs" />
+     <Compile Include="Assets\Script\Project script\CheckMedal.cs" />
      <Compile Include="Assets\Script\Project script\CollideBridge.cs" />
      <Compile Include="Assets\Script\Project script\Game.cs" />
      <Compile Include="Assets\Script\Project script\Material\MaterialDestroy.cs" />

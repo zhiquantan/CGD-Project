@@ -21,6 +21,10 @@ public class SC_FPSController : MonoBehaviour
     public string Name;
     public float curSpeedX;
     public float curSpeedY;
+    public static string rank;
+    public GameObject medal1;
+    public GameObject medal2;
+    public GameObject medal3;
     public GameObject Over;
     PhotonView PV;
 
@@ -45,10 +49,14 @@ public class SC_FPSController : MonoBehaviour
             GetComponentInChildren<Camera>().enabled = false;
         }
         Name=string.Format(PV.Owner.NickName);
+        
         if (PV.IsMine)
         {
             Name=string.Format(PV.Owner.NickName);
             Over.GetComponent<GameOver>().PlayerName=Name;
+
+            PV.RPC("RPC_Medal", RpcTarget.AllBuffered, rank);
+            
         }
         characterController = GetComponent<CharacterController>();
         
@@ -100,5 +108,24 @@ public class SC_FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+    }
+
+    [PunRPC]
+    void RPC_Medal(string rank)
+    {
+        if(rank=="1")
+            {
+                medal1.SetActive(true);
+            }
+
+            else if(rank=="2")
+            {
+                medal2.SetActive(true);
+            }
+
+            else if(rank=="3")
+            {
+                medal3.SetActive(true);
+            }
     }
 }

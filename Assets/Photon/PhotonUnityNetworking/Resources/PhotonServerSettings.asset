@@ -49,6 +49,7 @@ MonoBehaviour:
   - RPC_IncreaseSpeed
   - RPC_KillMaterial
   - RPC_KillSupriseElement
+  - RPC_Medal
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

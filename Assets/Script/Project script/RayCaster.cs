@@ -80,7 +80,8 @@ public class RayCaster : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0) && currentStone < 5)
                 {
-                   currentStone++;
+                    Debug.Log(currentStone);
+                   currentStone=currentStone+1;
                    currentStoneUI.GetComponent<Text>().text=currentStone.ToString();
                    Hit.gameObject.GetComponent<MaterialDestroy>().Obtained=true;
                 //    PV.RPC("RPC_GetStone", RpcTarget.AllBuffered, Hit.gameObject);
@@ -102,7 +103,8 @@ public class RayCaster : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0) && currentWood < 5)
                 {
-                   currentWood++;
+                Debug.Log(currentWood);
+                   currentWood=currentWood+1;
                    currentWoodUI.GetComponent<Text>().text=currentWood.ToString();
                    Hit.gameObject.GetComponent<MaterialDestroy>().Obtained=true;
                 //    PV.RPC("RPC_GetWood", RpcTarget.AllBuffered, Hit.gameObject);
