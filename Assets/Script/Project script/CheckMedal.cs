@@ -93,18 +93,21 @@ public class CheckMedal : MonoBehaviour
                 {
                     medal1.SetActive(true);
                     SC_FPSController.rank="1";
+                    CharacterSelection.rank="1";
                 }
 
                 else if((i + 1).ToString()=="2")
                 {
                     medal2.SetActive(true);
                     SC_FPSController.rank="2";
+                    CharacterSelection.rank="2";
                 }
 
                 else if((i + 1).ToString()=="3")
                 {
                     medal3.SetActive(true);
                     SC_FPSController.rank="3";
+                    CharacterSelection.rank="3";
                 }
                 // playerRankPos.SetActive(false);
                 // playerRankPos.transform.GetChild(0).GetComponent<Text>().text = (i + 1).ToString();

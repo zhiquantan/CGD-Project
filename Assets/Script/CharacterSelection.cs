@@ -20,6 +20,9 @@ public class CharacterSelection : MonoBehaviour
     public GameObject PlayButton;
     public int selectedCharacter = 0;
     public int PreparedPlayer = 0;
+    public static string rank;
+    public GameObject Top1Text;
+    
 
     public static int ChoosedCharacter;
     private GameObject PlayerList;
@@ -37,7 +40,9 @@ public class CharacterSelection : MonoBehaviour
     {
         PV = GetComponent<PhotonView>();
 
-        for (int i = 0; i < 3; i++)
+        
+
+        for (int i = 0; i < 4; i++)
         {
             CharacterSelected[i] = true;
         }
@@ -53,6 +58,17 @@ public class CharacterSelection : MonoBehaviour
             AvailableText.SetActive(true);
             NotAvailableText.SetActive(false);
             ChooseButton.SetActive(true);
+            Top1Text.SetActive(false);
+
+            if(rank!="1"&&selectedCharacter==3)
+            {
+            AvailableText.SetActive(false);
+            NotAvailableText.SetActive(true);
+            ChooseButton.SetActive(false);
+            Top1Text.SetActive(true);
+            }
+
+            
         }
         else
         {
