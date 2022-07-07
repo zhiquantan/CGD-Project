@@ -27,6 +27,8 @@ public class SC_FPSController : MonoBehaviour
     public GameObject medal3;
     public GameObject Over;
     PhotonView PV;
+    public AudioSource walking;
+    public AudioSource jumping;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -59,6 +61,9 @@ public class SC_FPSController : MonoBehaviour
             
         }
         characterController = GetComponent<CharacterController>();
+
+        walking = GameObject.Find("walking").GetComponent<AudioSource>();
+        jumping = GameObject.Find("jump").GetComponent<AudioSource>();
         
 
         // Lock cursor
@@ -71,6 +76,7 @@ public class SC_FPSController : MonoBehaviour
         if (!PV.IsMine)
             return;
         // We are grounded, so recalculate move direction based on axes
+        
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         // Press Left Shift to run
@@ -83,10 +89,12 @@ public class SC_FPSController : MonoBehaviour
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
             moveDirection.y = jumpSpeed;
+            jumping.Play();
         }
         else
         {
             moveDirection.y = movementDirectionY;
+            
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
@@ -99,10 +107,12 @@ public class SC_FPSController : MonoBehaviour
 
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
+        //walking.Play();
 
         // Player and Camera rotation
         if (canMove)
         {
+            //walking.Play();
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);

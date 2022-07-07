@@ -28,6 +28,8 @@ public class RayCaster : MonoBehaviour
     public ParticleSystem punchfx;
     public AudioSource moosedeath;
     public AudioSource foxdeath;
+    [SerializeField] public AudioSource CollectItem;
+    [SerializeField] public AudioSource PowerUp;
     public bool FindWT=false;
     PhotonView PV;
 
@@ -44,6 +46,8 @@ public class RayCaster : MonoBehaviour
         punchfx = GameObject.FindGameObjectsWithTag("punchfx")[0].GetComponent<ParticleSystem>();
         moosedeath = GameObject.Find("moosedeath").GetComponent<AudioSource>();
         foxdeath = GameObject.Find("foxdeath").GetComponent<AudioSource>();
+        CollectItem = GameObject.Find("collectitem").GetComponent<AudioSource>();
+        PowerUp = GameObject.Find("powerup").GetComponent<AudioSource>();
         StartCoroutine(FindBridge());
         
     }
@@ -80,6 +84,7 @@ public class RayCaster : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0) && currentStone < 5)
                 {
+                    CollectItem.Play();
                     Debug.Log(currentStone);
                    currentStone=currentStone+1;
                    currentStoneUI.GetComponent<Text>().text=currentStone.ToString();
@@ -100,9 +105,11 @@ public class RayCaster : MonoBehaviour
 
                 MaterialIcon.GetComponent<SpriteRenderer>().enabled = true;
                 NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
+                
 
                 if (Input.GetMouseButtonDown(0) && currentWood < 5)
                 {
+                    CollectItem.Play();
                 Debug.Log(currentWood);
                    currentWood=currentWood+1;
                    currentWoodUI.GetComponent<Text>().text=currentWood.ToString();
@@ -176,6 +183,7 @@ public class RayCaster : MonoBehaviour
 
              if (Input.GetMouseButtonDown(0))
                  {
+                    PowerUp.Play();
 
                     PV.RPC("RPC_StopTime", RpcTarget.AllBuffered);
                     Hit.gameObject.GetComponent<DestroySupriseElement>().Obtained=true;
@@ -194,6 +202,7 @@ public class RayCaster : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     // PhotonNetwork.Destroy(Hit.gameObject);
+                    PowerUp.Play();
                     StartCoroutine(IncreaseDamage());
                     Hit.gameObject.GetComponent<DestroySupriseElement>().Obtained=true;
                     //PV.RPC("RPC_IncreaseDamage", RpcTarget.AllBuffered, Hit);
@@ -211,6 +220,7 @@ public class RayCaster : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                    //PhotonNetwork.Destroy(Hit.gameObject);
+                   PowerUp.Play();
                    StartCoroutine(InreaseSpeed());
                    Hit.gameObject.GetComponent<DestroySupriseElement>().Obtained=true;
                    //PV.RPC("RPC_IncreaseSpeed", RpcTarget.AllBuffered, Hit);

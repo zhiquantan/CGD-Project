@@ -3207,6 +3207,8 @@ MonoBehaviour:
   medal2: {fileID: 9092272318936870419}
   medal3: {fileID: 3720460125944129722}
   Over: {fileID: 0}
+  walking: {fileID: 0}
+  jumping: {fileID: 0}
   canMove: 1
 --- !u!54 &6122254994254047533
 Rigidbody:
@@ -7390,6 +7392,8 @@ MonoBehaviour:
   punchfx: {fileID: 3431837846332882034}
   moosedeath: {fileID: 0}
   foxdeath: {fileID: 0}
+  CollectItem: {fileID: 0}
+  PowerUp: {fileID: 0}
   FindWT: 0
 --- !u!114 &2344582612234095006
 MonoBehaviour:
