@@ -17,6 +17,8 @@ public class APISystem : MonoBehaviour
     public InputField username;
     public InputField password;
     public GameObject LoginStage;
+    public GameObject SignUpPage;
+    public GameObject signupSame;
 
     public void GetLeaderboard()
     {
@@ -64,9 +66,22 @@ public class APISystem : MonoBehaviour
         }
         else
         {
-            EnablePlayer(alias);
-            Debug.Log(www.downloadHandler.text);
-        }
+             containerA = JsonUtility.FromJson<ContainerA>(www.downloadHandler.text);
+
+            Debug.Log(containerA.message.id);
+            if (containerA.status == "0")
+            {
+                Debug.Log("Same username!");
+                SignUpPage.SetActive(true);
+                signupSame.SetActive(true);
+            }
+            else
+            {
+
+                EnablePlayer(alias);
+                Debug.Log(www.downloadHandler.text);
+            }
+            }
     }
 
     public IEnumerator EnablePlayerController(string alias)

@@ -23,12 +23,6 @@ public class SignUp : MonoBehaviour
         loginStage.SetActive(false);
     }
 
-    public void selectLogin()
-    {
-        playerLogin.SetActive(true);
-        playerSignUp.SetActive(false);
-    }
-
     public void SignUpPlayer()
     {
         Debug.Log(userName.text);
