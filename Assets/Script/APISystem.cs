@@ -19,6 +19,8 @@ public class APISystem : MonoBehaviour
     public GameObject LoginStage;
     public GameObject SignUpPage;
     public GameObject signupSame;
+    public GameObject playerLogin;
+    public GameObject signupStage;
 
     public void GetLeaderboard()
     {
@@ -80,6 +82,10 @@ public class APISystem : MonoBehaviour
 
                 EnablePlayer(alias);
                 Debug.Log(www.downloadHandler.text);
+                SignUpPage.SetActive(false);
+                playerLogin.SetActive(true);
+                signupStage.SetActive(true);
+                signupSame.SetActive(false);
             }
             }
     }

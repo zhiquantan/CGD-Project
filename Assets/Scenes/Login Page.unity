@@ -3386,14 +3386,14 @@ RectTransform:
   m_GameObject: {fileID: 1762079123}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3354, y: 1.3354, z: 1.3354}
   m_Children: []
   m_Father: {fileID: 205780254}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.5, y: 84.6}
+  m_AnchoredPosition: {x: 15.5, y: 79.9}
   m_SizeDelta: {x: 244.35712, y: 56.487396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1762079125
@@ -3403,7 +3403,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762079123}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -3806,3 +3806,5 @@ MonoBehaviour:
   LoginStage: {fileID: 623596281}
   SignUpPage: {fileID: 1753100112}
   signupSame: {fileID: 1762079123}
+  playerLogin: {fileID: 1705379706}
+  signupStage: {fileID: 707894348}
