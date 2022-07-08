@@ -14,9 +14,26 @@ public class GameOverUIFinder : MonoBehaviour
     public TextMeshProUGUI Scoretext;
     public string name;
     public string name1;
+    public GameObject[] playernumber;
+    public static string difficulty;
+    public float multiplier;
     // Start is called before the first frame update
     void Start()
     {
+        if(difficulty=="easy")
+        {
+            multiplier=1;
+        }
+
+        else if(difficulty=="normal")
+        {
+            multiplier=2;
+        }
+
+        else if(difficulty=="hard")
+        {
+            multiplier=3;
+        }
         name1=name;
         GameOverUI.SetActive(true);
         Bridge=GameObject.FindGameObjectsWithTag("Bridge")[0];
@@ -30,7 +47,8 @@ public class GameOverUIFinder : MonoBehaviour
 
     IEnumerator CalculateScore()
     {
-       score=(100f/Bridge.GetComponent<Bridge>().time)*100f;
+        playernumber=GameObject.FindGameObjectsWithTag("Player");
+       score=((100f/Bridge.GetComponent<Bridge>().time)*100f)*multiplier/playernumber.Length;
         yield return new WaitForSeconds(1.0f);
     }
 

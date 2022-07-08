@@ -50,6 +50,10 @@ MonoBehaviour:
   - RPC_KillMaterial
   - RPC_KillSupriseElement
   - RPC_Medal
+  - RPC_Multiplier
+  - RPC_Easy
+  - RPC_Hard
+  - RPC_Normal
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

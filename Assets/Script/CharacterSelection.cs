@@ -123,31 +123,19 @@ public class CharacterSelection : MonoBehaviour
 
     public void Easy()
     {
-        Bridge.HpPerSecond=0.01f;
-        SpawnMaterial.SpawnSpeed=4;
-        SpawnAnimal.SpawnSpeed=6;
-        AttackedCount.Hp=2;
-        Bridge.difficulty="easy";
+         PV.RPC("RPC_Easy", RpcTarget.AllBuffered);
         PhotonNetwork.LoadLevel(3);
     }
 
     public void Normal()
     {
-        Bridge.HpPerSecond=0.02f;
-        Bridge.difficulty="normal";
-        SpawnMaterial.SpawnSpeed=5;
-        SpawnAnimal.SpawnSpeed=5;
-        AttackedCount.Hp=3;
+        PV.RPC("RPC_Normal", RpcTarget.AllBuffered);
         PhotonNetwork.LoadLevel(3);
     }
 
     public void Hard()
     {
-        Bridge.HpPerSecond=0.03f;
-        SpawnMaterial.SpawnSpeed=6;
-        SpawnAnimal.SpawnSpeed=4;
-        Bridge.difficulty="hard";
-        AttackedCount.Hp=4;
+        PV.RPC("RPC_Hard", RpcTarget.AllBuffered);
         PhotonNetwork.LoadLevel(3);
     }
 
@@ -157,4 +145,38 @@ public class CharacterSelection : MonoBehaviour
         CharacterSelected[CharNo] = false;
         PreparedPlayer++;
     }
+
+    [PunRPC]
+    void RPC_Easy()
+    {
+        Bridge.HpPerSecond=0.01f;
+        SpawnMaterial.SpawnSpeed=4;
+        SpawnAnimal.SpawnSpeed=6;
+        AttackedCount.Hp=2;
+        Bridge.difficulty="easy";
+        GameOverUIFinder.difficulty="easy";
+    }
+
+    [PunRPC]
+    void RPC_Normal()
+    {
+       Bridge.HpPerSecond=0.02f;
+        Bridge.difficulty="normal";
+        SpawnMaterial.SpawnSpeed=5;
+        SpawnAnimal.SpawnSpeed=5;
+        AttackedCount.Hp=3;
+        GameOverUIFinder.difficulty="normal";
+    }
+
+      [PunRPC]
+    void RPC_Hard()
+    {
+        Bridge.HpPerSecond=0.03f;
+        SpawnMaterial.SpawnSpeed=6;
+        SpawnAnimal.SpawnSpeed=4;
+        Bridge.difficulty="hard";
+        AttackedCount.Hp=4;
+        GameOverUIFinder.difficulty="hard";
+    }
+      
 }
