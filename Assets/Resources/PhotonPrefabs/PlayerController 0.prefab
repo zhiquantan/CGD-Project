@@ -3210,6 +3210,7 @@ MonoBehaviour:
   Over: {fileID: 0}
   walking: {fileID: 0}
   jumping: {fileID: 0}
+  TopEffect: {fileID: 318392203724003459}
   canMove: 1
 --- !u!54 &6122254994254047533
 Rigidbody:
@@ -7982,15 +7983,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c7cb024c1c3b944852ebb96ba84744, type: 3}
---- !u!198 &3431837846332882034 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4531494589910801421, guid: 84c7cb024c1c3b944852ebb96ba84744,
-    type: 3}
-  m_PrefabInstance: {fileID: 1243921505240572031}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3431837846313482546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4531494589891402061, guid: 84c7cb024c1c3b944852ebb96ba84744,
+    type: 3}
+  m_PrefabInstance: {fileID: 1243921505240572031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3431837846332882034 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4531494589910801421, guid: 84c7cb024c1c3b944852ebb96ba84744,
     type: 3}
   m_PrefabInstance: {fileID: 1243921505240572031}
   m_PrefabAsset: {fileID: 0}
@@ -8009,7 +8010,7 @@ PrefabInstance:
     - target: {fileID: 7806695941015304979, guid: f953982098e9f894b8dcd03015c8dfb3,
         type: 3}
       propertyPath: m_Name
-      value: FlareFX001-01
+      value: Effect
       objectReference: {fileID: 0}
     - target: {fileID: 7806695941015304979, guid: f953982098e9f894b8dcd03015c8dfb3,
         type: 3}
@@ -8103,6 +8104,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f953982098e9f894b8dcd03015c8dfb3, type: 3}
+--- !u!1 &318392203724003459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7806695941015304979, guid: f953982098e9f894b8dcd03015c8dfb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 7511402322464498576}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &318392203724003516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7806695941015305004, guid: f953982098e9f894b8dcd03015c8dfb3,

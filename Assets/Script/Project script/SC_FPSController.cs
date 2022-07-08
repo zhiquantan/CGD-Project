@@ -29,6 +29,7 @@ public class SC_FPSController : MonoBehaviour
     PhotonView PV;
     public AudioSource walking;
     public AudioSource jumping;
+    public GameObject TopEffect;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -126,11 +127,13 @@ public class SC_FPSController : MonoBehaviour
         if(rank=="1")
             {
                 medal1.SetActive(true);
+                TopEffect.SetActive(true);
             }
 
             else if(rank=="2")
             {
                 medal2.SetActive(true);
+                TopEffect.SetActive(true);
             }
 
             else if(rank=="3")

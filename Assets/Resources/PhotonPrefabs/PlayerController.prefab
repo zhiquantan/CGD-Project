@@ -5581,6 +5581,7 @@ MonoBehaviour:
   Over: {fileID: 0}
   walking: {fileID: 0}
   jumping: {fileID: 0}
+  TopEffect: {fileID: 3531077086586161045}
   canMove: 1
 --- !u!54 &7519157156364944565
 Rigidbody:
@@ -7927,7 +7928,7 @@ PrefabInstance:
     - target: {fileID: 7806695941015304979, guid: f953982098e9f894b8dcd03015c8dfb3,
         type: 3}
       propertyPath: m_Name
-      value: FlareFX001-01
+      value: Effect
       objectReference: {fileID: 0}
     - target: {fileID: 7806695941015304979, guid: f953982098e9f894b8dcd03015c8dfb3,
         type: 3}
@@ -8021,6 +8022,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f953982098e9f894b8dcd03015c8dfb3, type: 3}
+--- !u!1 &3531077086586161045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7806695941015304979, guid: f953982098e9f894b8dcd03015c8dfb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6725584525911276678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3531077086586161066 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7806695941015305004, guid: f953982098e9f894b8dcd03015c8dfb3,
