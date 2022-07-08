@@ -34,6 +34,8 @@ ScriptsOnlyBuild:
     - SpawnMaterial
     - SpawnSupriseElement
     - roomManager
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonTransformView
@@ -147,6 +149,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
     - Class: 91
@@ -181,6 +185,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13072}
     - Class: 114
       Script: {instanceID: 13104}
+    - Class: 114
+      Script: {instanceID: 13596}
     - Class: 114
       Script: {instanceID: 13870}
     - Class: 114
@@ -218,6 +224,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -488,7 +498,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16148}
     - Class: 114
-      Script: {instanceID: 81890}
+      Script: {instanceID: 24998}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2333,4 +2343,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/CharacterSelectionScreen.unity
   - Assets/Scenes/sceneMenu.unity
   - Assets/Scenes/LeaderBoard.unity
-  playerPath: D:/New folder/Computer game development/Project/Testing1/Lab1.exe
+  playerPath: C:/Users/ASUS/Documents/bridge game/Lab1.exe
