@@ -28,6 +28,9 @@ public class RayCaster : MonoBehaviour
     public ParticleSystem punchfx;
     public AudioSource moosedeath;
     public AudioSource foxdeath;
+    public GameObject SpeedUI;
+    public GameObject DamageUI;
+   
     [SerializeField] public AudioSource CollectItem;
     [SerializeField] public AudioSource PowerUp;
     public bool FindWT=false;
@@ -40,7 +43,8 @@ public class RayCaster : MonoBehaviour
 
     void Start()
     {
-        
+        SpeedUI=GameObject.FindGameObjectsWithTag("SUI")[0];
+        DamageUI=GameObject.FindGameObjectsWithTag("DUI")[0];
         currentWoodUI=GameObject.FindGameObjectsWithTag("WoodUI")[0];
         currentStoneUI=GameObject.FindGameObjectsWithTag("RockUI")[0];
         punchfx = GameObject.FindGameObjectsWithTag("punchfx")[0].GetComponent<ParticleSystem>();
@@ -257,7 +261,9 @@ public class RayCaster : MonoBehaviour
     {
         Player.GetComponent<SC_FPSController>().walkingSpeed = 40;
         Player.GetComponent<SC_FPSController>().runningSpeed = 60;
-        yield return new WaitForSeconds(10.0f);
+        SpeedUI.GetComponent<Image>().color=new Color(1,1,1,1);
+        yield return new WaitForSeconds(15.0f);
+        SpeedUI.GetComponent<Image>().color=new Color(1,1,1,0.4f);
         Player.GetComponent<SC_FPSController>().walkingSpeed = 20;
         Player.GetComponent<SC_FPSController>().runningSpeed = 30;
     }
@@ -265,14 +271,16 @@ public class RayCaster : MonoBehaviour
     IEnumerator StopTime()
     {
         Bridge.GetComponent<Bridge>().StopTime = true;
-        yield return new WaitForSeconds(20.0f);
+        yield return new WaitForSeconds(15.0f);
         Bridge.GetComponent<Bridge>().StopTime = false;
     }
 
     IEnumerator IncreaseDamage()
     {
         AttackDamage = 2;
-        yield return new WaitForSeconds(20.0f);
+        DamageUI.GetComponent<Image>().color=new Color(1,1,1,1);
+        yield return new WaitForSeconds(15.0f);
+        DamageUI.GetComponent<Image>().color=new Color(1,1,1,0.4f);
         AttackDamage = 1;
 
     }

@@ -36,14 +36,14 @@ public class SpawnSupriseElement : MonoBehaviour
             {
                 PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster1"), new Vector3(xPos,60,zPos), Quaternion.identity);
                 //Instantiate(,new Vector3(xPos,60,zPos),Quaternion.identity);
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(15);
                 
             }
             else if(no==2)
             {
                  PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster2"), new Vector3(xPos,60,zPos), Quaternion.identity);
                 //Instantiate(Booster2,new Vector3(xPos,60,zPos),Quaternion.identity);
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(15);
                 
             }
 
@@ -51,7 +51,7 @@ public class SpawnSupriseElement : MonoBehaviour
             {
                  PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Booster3"), new Vector3(xPos,60,zPos), Quaternion.identity);
                 //Instantiate(Booster3,new Vector3(xPos,60,zPos),Quaternion.identity);
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(15);
                 
             }
             else{

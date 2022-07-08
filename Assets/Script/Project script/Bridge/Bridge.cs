@@ -101,6 +101,12 @@ public class Bridge : MonoBehaviour
         {
             time++;
             TimeUI.text=time.ToString();
+            TimeUI.color=new Color(1, 1, 1,1);
+            
+        }
+
+        else{
+            TimeUI.color=new Color(82/255f, 78/255f, 183/255f,1);
         }
         
     }

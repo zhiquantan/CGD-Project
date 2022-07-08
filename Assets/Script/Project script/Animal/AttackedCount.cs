@@ -30,7 +30,7 @@ public class AttackedCount : MonoBehaviour
     
     void Update()
     {
-        if(Attackcount==Hp)
+        if(Attackcount>=Hp)
         {
             PV.RPC("RPC_KillAnimal", RpcTarget.AllBuffered);
             //PhotonNetwork.Destroy(gameObject);

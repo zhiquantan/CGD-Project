@@ -35,6 +35,10 @@ TagManager:
   - WUI
   - WT
   - Over
+  - DUI
+  - SUI
+  - DT
+  - ST
   layers:
   - Default
   - TransparentFX
