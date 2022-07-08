@@ -141,29 +141,32 @@ public class APISystem : MonoBehaviour
             containerA = JsonUtility.FromJson<ContainerA>(www.downloadHandler.text);
 
             Debug.Log(containerA.message.id);
-
-            if(containerA.status == "0")
+            Scene scene = SceneManager.GetActiveScene();
+            if(scene.name=="Login Page")
             {
-                Debug.Log("Login Fail");
-                LoginStage.SetActive(true);
-            }
+                if(containerA.status == "0")
+                {
+                    Debug.Log("Login Fail");
+                    LoginStage.SetActive(true);
+                }
 
-            else if (containerA.status == "1")
-            {
-                
-                if (password.text == containerA.message.id)
+                else if (containerA.status == "1")
+                {
                     
-                    {
-                    Debug.Log(username.text);
-                    Debug.Log("Name :" + PlayerPrefs.GetString("username"));
-                    SceneManager.LoadScene("Room");
-                    LoginStage.SetActive(false);
-                    }
-            }
-            else
-            {
-                LoginStage.SetActive(true);
-                Debug.Log("Failed");
+                    if (password.text == containerA.message.id)
+                        
+                        {
+                        Debug.Log(username.text);
+                        Debug.Log("Name :" + PlayerPrefs.GetString("username"));
+                        SceneManager.LoadScene("Room");
+                        LoginStage.SetActive(false);
+                        }
+                }
+                else
+                {
+                    LoginStage.SetActive(true);
+                    Debug.Log("Failed");
+                }
             }
         }
     }
