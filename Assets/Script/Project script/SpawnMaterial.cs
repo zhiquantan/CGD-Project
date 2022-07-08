@@ -14,6 +14,7 @@ public class SpawnMaterial : MonoBehaviour
     public static int count1;
     public static int count2;
     public int no;
+    public static float SpawnSpeed;
     
     void Start()
 {
@@ -37,14 +38,14 @@ IEnumerator EnemyDrop()
         {
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Material1"), new Vector3(xPos,60,zPos), Quaternion.identity);
             //Instantiate(Material1,new Vector3(xPos,60,zPos),Quaternion.identity);
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(SpawnSpeed);
             count1++;
         }
         else if(no==2&&count2<=5)
         {
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Material2"), new Vector3(xPos,60,zPos), Quaternion.identity);
             //Instantiate(Material2,new Vector3(xPos,60,zPos),Quaternion.identity);
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(SpawnSpeed);
             count2++;
         }
         

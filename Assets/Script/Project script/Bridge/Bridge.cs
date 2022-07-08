@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class Bridge : MonoBehaviour
 {
-    float HpPerSecond=0.01f;
+    public static float  HpPerSecond=0.01f;
     public Image BridgeLife;
     public GameObject BridgeLifeUI;
     public int currentWood;
     public int currentStone;
+    public static string difficulty;
     public int requireWood;
     public int requireStone;
     public int CurrentPhase;
@@ -29,8 +30,24 @@ public class Bridge : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        requireWood=1;
-        requireStone=1;
+        if(difficulty=="easy")
+        {
+            requireWood=10;
+            requireStone=10;
+        }
+
+        else if(difficulty=="normal")
+        {
+            requireWood=15;
+            requireStone=15;
+        }
+
+        else if(difficulty=="hard")
+        {
+            requireWood=20;
+            requireStone=20;
+        }
+        
         CurrentPhase=0;
         InvokeRepeating("HpReduce", 0, 1f);
          InvokeRepeating("Time", 0, 1f);
@@ -51,8 +68,8 @@ public class Bridge : MonoBehaviour
             {
                 CurrentPhase=0;
                 CurrentPhaseUI.text="Phase 0";
-                requireStone=requireStone-10;
-                requireWood=requireWood-10;
+                requireStone=requireStone-5;
+                requireWood=requireWood-5;
                 Phase1.SetActive(false);
                 Phase2.SetActive(false);
                 Phase3.SetActive(false);
@@ -62,8 +79,8 @@ public class Bridge : MonoBehaviour
             {
                 CurrentPhase=1;
                 CurrentPhaseUI.text="Phase 1";
-                requireStone=requireStone-10;
-                requireWood=requireWood-10;
+                requireStone=requireStone-5;
+                requireWood=requireWood-5;
                 Phase2.SetActive(false);
                 Phase3.SetActive(false);
             }
@@ -106,8 +123,8 @@ public class Bridge : MonoBehaviour
                 CurrentPhase=1;
                 currentWood=0;
                 currentStone=0;
-                requireStone=requireStone+1;
-                requireWood=requireWood+1;
+                requireStone=requireStone+5;
+                requireWood=requireWood+5;
                 CurrentPhaseUI.text="Phase 1";
                 
             }
@@ -120,8 +137,8 @@ public class Bridge : MonoBehaviour
                 CurrentPhase=2;
                 currentWood=0;
                 currentStone=0;
-                requireStone=requireStone+1;
-                requireWood=requireWood+1;
+                requireStone=requireStone+5;
+                requireWood=requireWood+5;
                 CurrentPhaseUI.text="Phase 2";
                  
             }

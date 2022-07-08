@@ -18,6 +18,8 @@ public class CharacterSelection : MonoBehaviour
     public GameObject NotAvailableText;
     public GameObject ChooseButton;
     public GameObject PlayButton;
+    public GameObject PlayButton1;
+    public GameObject PlayButton2;
     public int selectedCharacter = 0;
     public int PreparedPlayer = 0;
     public static string rank;
@@ -80,6 +82,8 @@ public class CharacterSelection : MonoBehaviour
         if (PreparedPlayer == players.Count() && PhotonNetwork.IsMasterClient)
         {
             PlayButton.SetActive(true);
+            PlayButton1.SetActive(true);
+            PlayButton2.SetActive(true);
         }
     }
     public void NextCharacter()
@@ -117,8 +121,33 @@ public class CharacterSelection : MonoBehaviour
 
     }
 
-    public void StartGame()
+    public void Easy()
     {
+        Bridge.HpPerSecond=0.01f;
+        SpawnMaterial.SpawnSpeed=4;
+        SpawnAnimal.SpawnSpeed=6;
+        AttackedCount.Hp=2;
+        Bridge.difficulty="easy";
+        PhotonNetwork.LoadLevel(3);
+    }
+
+    public void Normal()
+    {
+        Bridge.HpPerSecond=0.02f;
+        Bridge.difficulty="normal";
+        SpawnMaterial.SpawnSpeed=5;
+        SpawnAnimal.SpawnSpeed=5;
+        AttackedCount.Hp=3;
+        PhotonNetwork.LoadLevel(3);
+    }
+
+    public void Hard()
+    {
+        Bridge.HpPerSecond=0.03f;
+        SpawnMaterial.SpawnSpeed=6;
+        SpawnAnimal.SpawnSpeed=4;
+        Bridge.difficulty="hard";
+        AttackedCount.Hp=4;
         PhotonNetwork.LoadLevel(3);
     }
 

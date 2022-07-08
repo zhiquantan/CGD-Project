@@ -345,7 +345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attackcount: 0
-  Hp: 2
   AnimalSpawn: {fileID: 0}
 --- !u!114 &7118172844057990509
 MonoBehaviour:

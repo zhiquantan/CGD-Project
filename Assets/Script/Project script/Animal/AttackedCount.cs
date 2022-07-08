@@ -13,7 +13,7 @@ using System.IO;
 public class AttackedCount : MonoBehaviour
 {
     public int Attackcount;
-    public int Hp=2;
+    public static int Hp=2;
     public GameObject AnimalSpawn;
     PhotonView PV;
 

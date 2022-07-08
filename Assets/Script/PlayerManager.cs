@@ -40,6 +40,11 @@ public class PlayerManager : MonoBehaviour
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), new Vector3(113f,43.2f,208f), Quaternion.identity);
         }
 
+        else if (CharacterSelection.ChoosedCharacter == 3)
+        {
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController 2"), new Vector3(113f,43.2f,208f), Quaternion.identity);
+        }
+
     }
 
     // Update is called once per frame

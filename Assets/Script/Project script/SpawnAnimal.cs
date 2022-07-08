@@ -12,6 +12,7 @@ public class SpawnAnimal : MonoBehaviour
     public int zPos;
     public int count;
     public int no;
+    public static float SpawnSpeed;
     
     void Start()
 {
@@ -34,14 +35,14 @@ IEnumerator EnemyDrop()
         {
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Animal1"), new Vector3(xPos,92,zPos), Quaternion.identity);
             //Instantiate(Animal1,new Vector3(xPos,92,zPos),Quaternion.identity);
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(SpawnSpeed);
             count++;
         }
         else if(no==2)
         {
              PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Animal2"), new Vector3(xPos,83,zPos), Quaternion.identity);
            // Instantiate(Animal2,new Vector3(xPos,83,zPos),Quaternion.identity);
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(SpawnSpeed);
             count++;
         }
         
