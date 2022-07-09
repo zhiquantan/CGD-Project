@@ -143,17 +143,22 @@ public class APISystem : MonoBehaviour
             containerA = JsonUtility.FromJson<ContainerA>(www.downloadHandler.text);
 
             Debug.Log(containerA.message.id);
-            invalidStage.SetActive(true);
+            
             Scene scene = SceneManager.GetActiveScene();
             if(scene.name=="Login Page")
             {
-                if(containerA.status == "0")
+                invalidStage.SetActive(true);
+                LoginStage.SetActive(false);
+                if (containerA.status == "0")
                 {
-                    Debug.Log("Login Fail");
+                    invalidStage.SetActive(false);
+                    Debug.Log("Failed");
                     LoginStage.SetActive(true);
-                               }
+                    
+                }
 
                 else if (containerA.status == "1")
+                    
                 {
                     
                     if (password.text == containerA.message.id)
@@ -165,11 +170,7 @@ public class APISystem : MonoBehaviour
                         LoginStage.SetActive(false);
                         }
                 }
-                else
-                {
-                    LoginStage.SetActive(true);
-                    Debug.Log("Failed");
-                }
+                
             }
         }
     }
