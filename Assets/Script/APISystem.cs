@@ -21,6 +21,7 @@ public class APISystem : MonoBehaviour
     public GameObject signupSame;
     public GameObject playerLogin;
     public GameObject signupStage;
+    public GameObject invalidStage;
 
     public void GetLeaderboard()
     {
@@ -156,6 +157,7 @@ public class APISystem : MonoBehaviour
                     if (password.text == containerA.message.id)
                         
                         {
+                        invalidStage.SetActive(true);
                         Debug.Log(username.text);
                         Debug.Log("Name :" + PlayerPrefs.GetString("username"));
                         SceneManager.LoadScene("Room");
