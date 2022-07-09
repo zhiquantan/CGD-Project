@@ -15,6 +15,7 @@ public class SignUp : MonoBehaviour
     public GameObject playerLogin;
     public GameObject signupStage;
     public GameObject loginStage;
+    public GameObject invalid;
 
     public void selectSignUp()
     {
@@ -22,6 +23,7 @@ public class SignUp : MonoBehaviour
         playerSignUp.SetActive(true);
         loginStage.SetActive(false);
         signupStage.SetActive(false);
+        invalid.SetActive(false);
     }
 
     public void SignUpPlayer()
