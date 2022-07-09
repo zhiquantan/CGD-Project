@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -129,11 +129,12 @@ public class APISystem : MonoBehaviour
         UnityWebRequest www = UnityWebRequest.Get(URI + "/getPlayer" + "?token=" + token + "&alias=" + alias);
 
         yield return www.SendWebRequest();
-
+        
         if (www.isNetworkError || www.isHttpError)
         {
             Debug.Log(www.error);
             StartCoroutine(GetPlayerController(alias));
+            
         }
         else
         {
@@ -142,6 +143,7 @@ public class APISystem : MonoBehaviour
             containerA = JsonUtility.FromJson<ContainerA>(www.downloadHandler.text);
 
             Debug.Log(containerA.message.id);
+            invalidStage.SetActive(true);
             Scene scene = SceneManager.GetActiveScene();
             if(scene.name=="Login Page")
             {
@@ -149,7 +151,7 @@ public class APISystem : MonoBehaviour
                 {
                     Debug.Log("Login Fail");
                     LoginStage.SetActive(true);
-                }
+                               }
 
                 else if (containerA.status == "1")
                 {
@@ -157,9 +159,8 @@ public class APISystem : MonoBehaviour
                     if (password.text == containerA.message.id)
                         
                         {
-                        invalidStage.SetActive(true);
                         Debug.Log(username.text);
-                        Debug.Log("Name :" + PlayerPrefs.GetString("username"));
+                        Debug.Log("Name :" + 								PlayerPrefs.GetString("username"));
                         SceneManager.LoadScene("Room");
                         LoginStage.SetActive(false);
                         }

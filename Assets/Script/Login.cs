@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +13,7 @@ public class Login : MonoBehaviour
     public GameObject playerLogin;
     public GameObject playerSignUp;
     public GameObject signupStatus;
+    public GameObject invalidStage;
  
     public void savePlayerName()
     {
@@ -29,6 +30,8 @@ public class Login : MonoBehaviour
             PlayerPrefs.SetString("username", userName.text);
             FindObjectOfType<APISystem>().GetPlayer(userName.text);
             signupStatus.SetActive(false);
+            invalidStage.SetActive(false);
+	
         }
     }
 
