@@ -21,6 +21,7 @@ public class SignUp : MonoBehaviour
        playerLogin.SetActive(false);
         playerSignUp.SetActive(true);
         loginStage.SetActive(false);
+        signupStage.SetActive(false);
     }
 
     public void SignUpPlayer()
