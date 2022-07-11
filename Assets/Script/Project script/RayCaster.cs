@@ -30,6 +30,7 @@ public class RayCaster : MonoBehaviour
     public AudioSource foxdeath;
     public GameObject SpeedUI;
     public GameObject DamageUI;
+    public bool waiting=true;
    
     [SerializeField] public AudioSource CollectItem;
     [SerializeField] public AudioSource PowerUp;
@@ -86,11 +87,12 @@ public class RayCaster : MonoBehaviour
                 MaterialIcon.GetComponent<SpriteRenderer>().enabled = true;
                 NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
 
-                if (Input.GetMouseButtonDown(0) && currentStone < 5)
+                if (Input.GetMouseButtonDown(0) && currentStone < 5&&waiting==true)
                 {
                     CollectItem.Play();
                     Debug.Log(currentStone);
                    currentStone=currentStone+1;
+                   StartCoroutine(Wait());
                    currentStoneUI.GetComponent<Text>().text=currentStone.ToString();
                    Hit.gameObject.GetComponent<MaterialDestroy>().Obtained=true;
                 //    PV.RPC("RPC_GetStone", RpcTarget.AllBuffered, Hit.gameObject);
@@ -98,7 +100,7 @@ public class RayCaster : MonoBehaviour
                 //    SpawnMaterial.count1--;
                 }
 
-                else if (Input.GetMouseButtonDown(0) && currentStone >= 5)
+                else if (Input.GetMouseButtonDown(0) && currentStone >= 5&&waiting==true)
                 {
                     StartCoroutine(WarningText());
                 }
@@ -111,7 +113,7 @@ public class RayCaster : MonoBehaviour
                 NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
                 
 
-                if (Input.GetMouseButtonDown(0) && currentWood < 5)
+                if (Input.GetMouseButtonDown(0) && currentWood < 5&&waiting==true)
                 {
                     CollectItem.Play();
                 Debug.Log(currentWood);
@@ -123,7 +125,7 @@ public class RayCaster : MonoBehaviour
                     // SpawnMaterial.count2--;
                 }
 
-                else if (Input.GetMouseButtonDown(0) && currentWood >= 5)
+                else if (Input.GetMouseButtonDown(0) && currentWood >= 5&&waiting==true)
                 {
                     StartCoroutine(WarningText());
                 }
@@ -135,7 +137,7 @@ public class RayCaster : MonoBehaviour
                 AnimalIcon.GetComponent<SpriteRenderer>().enabled = true;
                 NothingIcon.GetComponent<SpriteRenderer>().enabled = false;
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0)&&waiting==true)
                 {
                     Hit.gameObject.GetComponent<AttackedCount>().Attackcount = Hit.gameObject.GetComponent<AttackedCount>().Attackcount + AttackDamage;
                     punchfx.transform.position = hit.point;
@@ -292,6 +294,14 @@ public class RayCaster : MonoBehaviour
         FindWT=true;
         WarningUI.SetActive(false);
          
+
+    }
+
+    IEnumerator Wait()
+    {
+       waiting=false;
+       yield return new WaitForSeconds(0.5f);
+       waiting=true;  
 
     }
 

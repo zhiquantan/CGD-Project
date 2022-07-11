@@ -7396,6 +7396,7 @@ MonoBehaviour:
   foxdeath: {fileID: 0}
   SpeedUI: {fileID: 0}
   DamageUI: {fileID: 0}
+  waiting: 1
   CollectItem: {fileID: 0}
   PowerUp: {fileID: 0}
   FindWT: 0

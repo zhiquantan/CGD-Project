@@ -149,8 +149,8 @@ public class CharacterSelection : MonoBehaviour
     [PunRPC]
     void RPC_Easy()
     {
-        Bridge.HpPerSecond=0.01f;
-        SpawnMaterial.SpawnSpeed=4;
+        Bridge.HpPerSecond=0.005f;
+        SpawnMaterial.SpawnSpeed=2;
         SpawnAnimal.SpawnSpeed=6;
         AttackedCount.Hp=2;
         Bridge.difficulty="easy";
@@ -160,9 +160,9 @@ public class CharacterSelection : MonoBehaviour
     [PunRPC]
     void RPC_Normal()
     {
-       Bridge.HpPerSecond=0.02f;
+       Bridge.HpPerSecond=0.01f;
         Bridge.difficulty="normal";
-        SpawnMaterial.SpawnSpeed=5;
+        SpawnMaterial.SpawnSpeed=3;
         SpawnAnimal.SpawnSpeed=5;
         AttackedCount.Hp=3;
         GameOverUIFinder.difficulty="normal";
@@ -171,8 +171,8 @@ public class CharacterSelection : MonoBehaviour
       [PunRPC]
     void RPC_Hard()
     {
-        Bridge.HpPerSecond=0.03f;
-        SpawnMaterial.SpawnSpeed=6;
+        Bridge.HpPerSecond=0.015f;
+        SpawnMaterial.SpawnSpeed=4;
         SpawnAnimal.SpawnSpeed=4;
         Bridge.difficulty="hard";
         AttackedCount.Hp=4;
